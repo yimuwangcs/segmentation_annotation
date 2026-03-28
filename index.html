@@ -1,0 +1,1344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Segmentation Mask Annotator</title>
+  <style>
+    :root {
+      --bg: #f2eee7;
+      --panel: rgba(255, 252, 246, 0.92);
+      --panel-strong: #fffaf1;
+      --ink: #1f2937;
+      --muted: #687281;
+      --accent: #0f766e;
+      --accent-soft: rgba(15, 118, 110, 0.14);
+      --danger: #b42318;
+      --line: rgba(31, 41, 55, 0.1);
+      --shadow: 0 20px 50px rgba(56, 44, 23, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(244, 114, 76, 0.18), transparent 26%),
+        radial-gradient(circle at right, rgba(15, 118, 110, 0.16), transparent 24%),
+        linear-gradient(135deg, #f6f1e8 0%, #e6ece8 100%);
+    }
+
+    .app {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: 20px;
+      padding: 20px;
+      min-height: 100vh;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.72);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
+    }
+
+    .sidebar {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .title {
+      margin: 0;
+      font-size: 1.8rem;
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .section-label {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    button,
+    input,
+    select {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      border-radius: 14px;
+      padding: 12px 14px;
+      background: var(--panel-strong);
+      color: var(--ink);
+      cursor: pointer;
+      transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: inset 0 0 0 1px rgba(15, 118, 110, 0.25), 0 10px 24px rgba(15, 118, 110, 0.1);
+    }
+
+    button.active {
+      background: var(--accent);
+      color: white;
+      box-shadow: none;
+    }
+
+    button.danger {
+      color: var(--danger);
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: var(--accent);
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .upload {
+      display: block;
+      padding: 14px;
+      border-radius: 18px;
+      border: 1px dashed rgba(15, 118, 110, 0.35);
+      background: var(--accent-soft);
+      color: var(--accent);
+      text-align: center;
+      cursor: pointer;
+      font-weight: 700;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .stat {
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    .stat b {
+      display: block;
+      font-size: 1.15rem;
+      margin-top: 4px;
+    }
+
+    .sam-points {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .sam-status {
+      border-radius: 16px;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: inset 0 0 0 1px var(--line);
+      color: var(--muted);
+      line-height: 1.45;
+      min-height: 72px;
+    }
+
+    .text-input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--ink);
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .text-input:focus {
+      outline: 2px solid rgba(15, 118, 110, 0.35);
+      border-color: rgba(15, 118, 110, 0.35);
+    }
+
+    .image-list {
+      max-height: 280px;
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-right: 4px;
+    }
+
+    .image-item {
+      width: 100%;
+      text-align: left;
+      padding: 12px;
+      border-radius: 16px;
+      line-height: 1.35;
+    }
+
+    .image-item small {
+      display: block;
+      color: var(--muted);
+      margin-top: 4px;
+      word-break: break-all;
+    }
+
+    .main {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      gap: 16px;
+      padding: 16px;
+    }
+
+    .main-top {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
+      gap: 16px;
+      padding: 8px 8px 0;
+      align-items: start;
+    }
+
+    .meta h2 {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    .meta p {
+      margin: 6px 0 0;
+      color: var(--muted);
+    }
+
+    .top-right {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 12px;
+      align-items: start;
+    }
+
+    .grid-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .full-height {
+      align-self: stretch;
+    }
+
+    .compact-toolbar {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .all-buttons {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+
+    .qa-inline label {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .qa-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .text-input.small {
+      min-height: 44px;
+      resize: none;
+    }
+
+    .canvas-wrap {
+      position: relative;
+      min-height: 520px;
+      border-radius: 28px;
+      overflow: hidden;
+      background:
+        linear-gradient(45deg, rgba(15, 118, 110, 0.06) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(15, 118, 110, 0.06) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(15, 118, 110, 0.06) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(15, 118, 110, 0.06) 75%);
+      background-size: 24px 24px;
+      background-position: 0 0, 0 12px, 12px -12px, -12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #viewCanvas {
+      max-width: 100%;
+      max-height: calc(100vh - 240px);
+      width: auto;
+      height: auto;
+      display: block;
+      cursor: crosshair;
+      touch-action: none;
+    }
+
+    .hintbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 0 6px 8px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: inset 0 0 0 1px var(--line);
+    }
+
+    @media (max-width: 980px) {
+      .app {
+        grid-template-columns: 1fr;
+      }
+
+      .canvas-wrap {
+        min-height: 360px;
+      }
+
+      #viewCanvas {
+        max-height: 58vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <aside class="panel sidebar">
+      <div>
+        <h1 class="title">Mask Annotator</h1>
+        <p class="subtitle">Interactive image segmentation mask annotation with brush, eraser, undo/redo, existing mask loading, and PNG export.</p>
+      </div>
+
+      <div class="section">
+        <span class="section-label">Data</span>
+        <label class="upload" for="fileInput">Import Images / Masks</label>
+        <input id="fileInput" type="file" accept=".jpg,.jpeg,.png,image/png,image/jpeg" multiple />
+      </div>
+
+      <div class="section">
+        <span class="section-label">Tools</span>
+        <div class="toolbar">
+          <button id="brushBtn" class="active" type="button">Brush</button>
+          <button id="eraseBtn" type="button">Eraser</button>
+          <button id="samBtn" type="button">SAM Prompt</button>
+          <button id="undoBtn" type="button">Undo</button>
+          <button id="redoBtn" type="button">Redo</button>
+          <button id="fillBtn" type="button">Fill</button>
+          <button id="clearBtn" class="danger" type="button">Clear</button>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">Settings</span>
+        <label>Brush Size <span id="brushSizeValue">28</span> px</label>
+        <input id="brushSize" type="range" min="2" max="160" value="28" />
+        <label>Mask Opacity <span id="opacityValue">0.42</span></label>
+        <input id="opacity" type="range" min="0.1" max="0.9" step="0.01" value="0.42" />
+      </div>
+
+      <div class="section">
+        <span class="section-label">Status</span>
+        <div class="stat-grid">
+          <div class="stat">Canvas Size<b id="sizeStat">-</b></div>
+          <div class="stat">Labeled Pixels<b id="pixelStat">0</b></div>
+        </div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">SAM</span>
+        <div class="toolbar">
+          <button id="runSamBtn" type="button">Run SAM</button>
+          <button id="applySamBtn" type="button">Apply Candidate</button>
+          <button id="clearSamBtn" type="button">Clear Prompts</button>
+          <button id="retrySamStatusBtn" type="button">Check Service</button>
+        </div>
+        <div class="sam-points">
+          <span class="pill">Positive <b id="samPositiveCount">0</b></span>
+          <span class="pill">Negative <b id="samNegativeCount">0</b></span>
+        </div>
+        <div id="samStatus" class="sam-status">SAM service not checked yet.</div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">Images</span>
+        <div id="imageList" class="image-list"></div>
+      </div>
+    </aside>
+
+    <main class="panel main">
+      <div class="main-top">
+        <div class="meta">
+          <h2 id="imageName">No Image Selected</h2>
+          <p id="imageMeta">Open this HTML directly, or serve this directory with a local static server for more reliable file loading.</p>
+        </div>
+        <div class="top-right">
+          <div class="grid-item">
+            <label for="questionInput">Question</label>
+            <textarea id="questionInput" class="text-input" placeholder="Type the question for this image..."></textarea>
+          </div>
+          <div class="grid-item full-height">
+            <label>All Buttons</label>
+            <div class="all-buttons">
+              <button id="loadMaskBtn" type="button">Reload Mask</button>
+              <button id="toggleMaskBtn" class="active" type="button">Overlay On</button>
+              <button id="downloadBtn" type="button">Download Mask</button>
+              <button id="downloadRleBtn" type="button">Download RLE</button>
+              <button id="saveMetaBtn" type="button">Save Metadata</button>
+              <button id="downloadMetaBtn" type="button">Download Metadata</button>
+              <button id="downloadSummaryBtn" type="button">Download Summary</button>
+            </div>
+            <div id="metaStatus" class="sam-status">No metadata saved yet.</div>
+          </div>
+          <div class="grid-item full-height">
+            <label for="answerInput">Answer</label>
+            <textarea id="answerInput" class="text-input" placeholder="Type the answer for this image..."></textarea>
+            <div class="qa-grid">
+              <div>
+                <label for="taskTypeInput">Task Type</label>
+                <input id="taskTypeInput" class="text-input small" placeholder="e.g. attribute" />
+              </div>
+              <div>
+                <label for="taskDomainInput">Task Domain</label>
+                <input id="taskDomainInput" class="text-input small" placeholder="e.g. science" />
+              </div>
+              <div>
+                <label for="numInstancesInput">Num Instances</label>
+                <input id="numInstancesInput" class="text-input small" type="number" min="0" step="1" value="1" />
+              </div>
+              <div>
+                <label for="hallucinationInput">Hallucination</label>
+                <input id="hallucinationInput" class="text-input small" type="number" min="0" step="1" value="0" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="canvas-wrap">
+        <canvas id="viewCanvas" width="1600" height="900"></canvas>
+      </div>
+
+      <div class="hintbar">
+        <span class="pill">Left drag to paint</span>
+        <span class="pill">In SAM mode: left click adds positive, Alt/Option+click adds negative</span>
+        <span class="pill">Imported files auto-match same-name masks</span>
+        <span class="pill">`[` / `]` adjusts brush size</span>
+        <span class="pill">`B` brush, `E` eraser, `S` SAM</span>
+        <span class="pill">`Cmd/Ctrl+Z` undo, `Shift+Cmd/Ctrl+Z` redo</span>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const builtInEntries = [
+      { image: "n003-2018-01-03-17-00-35+0800__CAM_FRONT_LEFT__1514970117374297.jpg", mask: "n003-2018-01-03-17-00-35+0800__CAM_FRONT_LEFT__1514970117374297.png" },
+      { image: "n003-2018-01-03-17-00-35+0800__CAM_FRONT_RIGHT__1514970197826105.jpg", mask: null },
+      { image: "n003-2018-01-03-17-00-35+0800__CAM_FRONT__1514970587029743.jpg", mask: "n003-2018-01-03-17-00-35+0800__CAM_FRONT__1514970587029743_mask.png" },
+      { image: "n003-2018-01-08-11-30-34+0800__CAM_FRONT_LEFT__1515383172332692.jpg", mask: null },
+      { image: "n016-2018-07-05-17-27-17+0800__CAM_FRONT_RIGHT__1530783478620471.jpg", mask: "n016-2018-07-05-17-27-17+0800__CAM_FRONT_RIGHT__1530783478620471.png" },
+      { image: "n016-2018-07-10-16-55-57+0800__CAM_FRONT__1531213348912515.jpg", mask: null }
+    ];
+
+    const state = {
+      entries: [],
+      currentIndex: -1,
+      tool: "brush",
+      brushSize: 28,
+      overlayOpacity: 0.42,
+      showMask: true,
+      drawing: false,
+      lastPoint: null,
+      imageElement: null,
+      imageSource: null,
+      imageBitmapUrl: null,
+      undoStack: [],
+      redoStack: [],
+      metadata: {},
+      sam: {
+        endpoint: "http://127.0.0.1:8001",
+        ready: false,
+        loading: false,
+        prompts: [],
+        candidateMask: null,
+        score: null
+      }
+    };
+
+    const fileMap = new Map();
+
+    const viewCanvas = document.getElementById("viewCanvas");
+    const viewCtx = viewCanvas.getContext("2d");
+    const maskCanvas = document.createElement("canvas");
+    const maskCtx = maskCanvas.getContext("2d", { willReadFrequently: true });
+    const imageListEl = document.getElementById("imageList");
+    const brushBtn = document.getElementById("brushBtn");
+    const eraseBtn = document.getElementById("eraseBtn");
+    const samBtn = document.getElementById("samBtn");
+    const undoBtn = document.getElementById("undoBtn");
+    const redoBtn = document.getElementById("redoBtn");
+    const fillBtn = document.getElementById("fillBtn");
+    const clearBtn = document.getElementById("clearBtn");
+    const loadMaskBtn = document.getElementById("loadMaskBtn");
+    const toggleMaskBtn = document.getElementById("toggleMaskBtn");
+    const downloadBtn = document.getElementById("downloadBtn");
+    const runSamBtn = document.getElementById("runSamBtn");
+    const applySamBtn = document.getElementById("applySamBtn");
+    const clearSamBtn = document.getElementById("clearSamBtn");
+    const retrySamStatusBtn = document.getElementById("retrySamStatusBtn");
+    const downloadRleBtn = document.getElementById("downloadRleBtn");
+    const fileInput = document.getElementById("fileInput");
+    const brushSizeInput = document.getElementById("brushSize");
+    const opacityInput = document.getElementById("opacity");
+    const brushSizeValue = document.getElementById("brushSizeValue");
+    const opacityValue = document.getElementById("opacityValue");
+    const imageName = document.getElementById("imageName");
+    const imageMeta = document.getElementById("imageMeta");
+    const sizeStat = document.getElementById("sizeStat");
+    const pixelStat = document.getElementById("pixelStat");
+    const samStatus = document.getElementById("samStatus");
+    const samPositiveCount = document.getElementById("samPositiveCount");
+    const samNegativeCount = document.getElementById("samNegativeCount");
+    const questionInput = document.getElementById("questionInput");
+    const answerInput = document.getElementById("answerInput");
+    const taskTypeInput = document.getElementById("taskTypeInput");
+    const taskDomainInput = document.getElementById("taskDomainInput");
+    const numInstancesInput = document.getElementById("numInstancesInput");
+    const hallucinationInput = document.getElementById("hallucinationInput");
+    const saveMetaBtn = document.getElementById("saveMetaBtn");
+    const downloadMetaBtn = document.getElementById("downloadMetaBtn");
+    const downloadSummaryBtn = document.getElementById("downloadSummaryBtn");
+    const metaStatus = document.getElementById("metaStatus");
+
+    function setTool(tool) {
+      state.tool = tool;
+      brushBtn.classList.toggle("active", tool === "brush");
+      eraseBtn.classList.toggle("active", tool === "erase");
+      samBtn.classList.toggle("active", tool === "sam");
+      viewCanvas.style.cursor = tool === "sam" ? "cell" : "crosshair";
+    }
+
+    function setSamStatus(message, isError = false) {
+      samStatus.textContent = message;
+      samStatus.style.color = isError ? "var(--danger)" : "var(--muted)";
+    }
+
+    function updateSamPointStats() {
+      const positives = state.sam.prompts.filter((item) => item.label === 1).length;
+      const negatives = state.sam.prompts.filter((item) => item.label === 0).length;
+      samPositiveCount.textContent = String(positives);
+      samNegativeCount.textContent = String(negatives);
+      applySamBtn.disabled = !state.sam.candidateMask;
+    }
+
+    function setMetaStatus(message, isError = false) {
+      metaStatus.textContent = message;
+      metaStatus.style.color = isError ? "var(--danger)" : "var(--muted)";
+    }
+
+    function updateStats() {
+      sizeStat.textContent = state.imageElement ? `${maskCanvas.width} × ${maskCanvas.height}` : "-";
+      if (!state.imageElement) {
+        pixelStat.textContent = "0";
+        return;
+      }
+
+      const data = maskCtx.getImageData(0, 0, maskCanvas.width, maskCanvas.height).data;
+      let count = 0;
+      for (let i = 3; i < data.length; i += 4) {
+        if (data[i] > 0) {
+          count += 1;
+        }
+      }
+      pixelStat.textContent = count.toLocaleString();
+    }
+
+    function snapshotMask() {
+      if (!state.imageElement) return;
+      const imageData = maskCtx.getImageData(0, 0, maskCanvas.width, maskCanvas.height);
+      state.undoStack.push(imageData);
+      if (state.undoStack.length > 20) state.undoStack.shift();
+      state.redoStack = [];
+      syncUndoButtons();
+    }
+
+    function restoreImageData(imageData) {
+      maskCtx.putImageData(imageData, 0, 0);
+      render();
+      updateStats();
+    }
+
+    function syncUndoButtons() {
+      undoBtn.disabled = state.undoStack.length === 0;
+      redoBtn.disabled = state.redoStack.length === 0;
+    }
+
+    function getDisplayScale() {
+      return {
+        scaleX: viewCanvas.width / viewCanvas.getBoundingClientRect().width,
+        scaleY: viewCanvas.height / viewCanvas.getBoundingClientRect().height
+      };
+    }
+
+    function getCanvasPoint(event) {
+      const rect = viewCanvas.getBoundingClientRect();
+      const { scaleX, scaleY } = getDisplayScale();
+      return {
+        x: (event.clientX - rect.left) * scaleX,
+        y: (event.clientY - rect.top) * scaleY
+      };
+    }
+
+    function drawSegment(from, to) {
+      maskCtx.save();
+      maskCtx.lineCap = "round";
+      maskCtx.lineJoin = "round";
+      maskCtx.lineWidth = state.brushSize;
+      if (state.tool === "erase") {
+        maskCtx.globalCompositeOperation = "destination-out";
+        maskCtx.strokeStyle = "rgba(0,0,0,1)";
+      } else {
+        maskCtx.globalCompositeOperation = "source-over";
+        maskCtx.strokeStyle = "rgba(255,255,255,1)";
+      }
+      maskCtx.beginPath();
+      maskCtx.moveTo(from.x, from.y);
+      maskCtx.lineTo(to.x, to.y);
+      maskCtx.stroke();
+      maskCtx.restore();
+    }
+
+    function render() {
+      viewCtx.clearRect(0, 0, viewCanvas.width, viewCanvas.height);
+      if (!state.imageElement) {
+        viewCtx.fillStyle = "#d6ddd9";
+        viewCtx.fillRect(0, 0, viewCanvas.width, viewCanvas.height);
+        viewCtx.fillStyle = "#425466";
+        viewCtx.font = "24px Avenir Next";
+        viewCtx.textAlign = "center";
+        viewCtx.fillText("Select an image to start annotating", viewCanvas.width / 2, viewCanvas.height / 2);
+        return;
+      }
+
+      viewCtx.drawImage(state.imageElement, 0, 0, viewCanvas.width, viewCanvas.height);
+
+      if (state.showMask) {
+        viewCtx.save();
+        viewCtx.globalAlpha = state.overlayOpacity;
+        viewCtx.drawImage(maskCanvas, 0, 0, viewCanvas.width, viewCanvas.height);
+        viewCtx.restore();
+      }
+
+      if (state.sam.candidateMask) {
+        viewCtx.save();
+        viewCtx.globalAlpha = 0.3;
+        viewCtx.drawImage(state.sam.candidateMask, 0, 0, viewCanvas.width, viewCanvas.height);
+        viewCtx.restore();
+      }
+
+      if (state.sam.prompts.length > 0) {
+        viewCtx.save();
+        for (const prompt of state.sam.prompts) {
+          viewCtx.beginPath();
+          viewCtx.arc(prompt.x, prompt.y, 8, 0, Math.PI * 2);
+          viewCtx.fillStyle = prompt.label === 1 ? "#16a34a" : "#dc2626";
+          viewCtx.fill();
+          viewCtx.lineWidth = 2;
+          viewCtx.strokeStyle = "white";
+          viewCtx.stroke();
+        }
+        viewCtx.restore();
+      }
+    }
+
+    function getMaskDownloadName(entry) {
+      const base = entry.image.replace(/\.[^.]+$/, "");
+      return `${base}_mask.png`;
+    }
+
+    function deriveImageId(fileName) {
+      const match = fileName.match(/\d+/);
+      if (match) return Number(match[0]);
+      return state.currentIndex + 1;
+    }
+
+    function createObjectUrl(file) {
+      const existing = fileMap.get(file.name);
+      if (existing && existing.file === file) return existing.url;
+      const url = URL.createObjectURL(file);
+      fileMap.set(file.name, { file, url });
+      return url;
+    }
+
+    function resolveImageSource(name) {
+      const info = fileMap.get(name);
+      return info ? info.url : name;
+    }
+
+    function resolveMaskSource(entry) {
+      if (entry.mask && fileMap.has(entry.mask)) {
+        return fileMap.get(entry.mask).url;
+      }
+      if (entry.mask) {
+        return entry.mask;
+      }
+
+      const base = entry.image.replace(/\.[^.]+$/, "");
+      const candidates = [`${base}_mask.png`, `${base}.png`];
+      for (const candidate of candidates) {
+        if (fileMap.has(candidate)) return fileMap.get(candidate).url;
+      }
+      return candidates;
+    }
+
+    function resetHistory() {
+      state.undoStack = [];
+      state.redoStack = [];
+      syncUndoButtons();
+    }
+
+    function resetSamCandidate() {
+      state.sam.candidateMask = null;
+      state.sam.score = null;
+      updateSamPointStats();
+      render();
+    }
+
+    function clearSamPrompts(resetCandidate = true) {
+      state.sam.prompts = [];
+      if (resetCandidate) resetSamCandidate();
+      updateSamPointStats();
+      render();
+    }
+
+    async function checkSamService() {
+      setSamStatus("Checking SAM service...");
+      try {
+        const response = await fetch(`${state.sam.endpoint}/health`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const payload = await response.json();
+        state.sam.ready = Boolean(payload.ready);
+        setSamStatus(payload.ready ? `SAM service ready, model: ${payload.model_type}` : "SAM service is running, but the model is not ready.", !payload.ready);
+      } catch (error) {
+        state.sam.ready = false;
+      setSamStatus("SAM service unavailable. Start local `sam_server.py` first.", true);
+      }
+    }
+
+    async function imageToBase64() {
+      const entry = state.entries[state.currentIndex];
+      if (!entry) throw new Error("No image selected.");
+
+      const fromMap = fileMap.get(entry.image);
+      if (fromMap?.file) {
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(new Error("Failed to read local image file."));
+          reader.readAsDataURL(fromMap.file);
+        });
+      }
+
+      if (!state.imageSource) {
+        throw new Error("Image source unavailable. Use the file picker or run a local server.");
+      }
+
+      try {
+        const response = await fetch(state.imageSource, { cache: "no-store" });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const blob = await response.blob();
+        return new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = () => resolve(reader.result);
+          reader.onerror = () => reject(new Error("Failed to read image blob."));
+          reader.readAsDataURL(blob);
+        });
+      } catch (error) {
+        throw new Error("Unable to fetch image. If you opened the HTML via file://, start a local server.");
+      }
+    }
+
+    async function runSam() {
+      if (!state.imageElement) return;
+      if (state.sam.prompts.length === 0) {
+        setSamStatus("Add at least one prompt point in SAM mode first.", true);
+        return;
+      }
+
+      state.sam.loading = true;
+      runSamBtn.disabled = true;
+      setSamStatus("Running SAM inference...");
+
+      try {
+        const response = await fetch(`${state.sam.endpoint}/predict`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            image: await imageToBase64(),
+            points: state.sam.prompts.map((point) => [point.x, point.y]),
+            labels: state.sam.prompts.map((point) => point.label)
+          })
+        });
+        if (!response.ok) {
+          const detail = await response.text();
+          throw new Error(detail || `HTTP ${response.status}`);
+        }
+
+        const payload = await response.json();
+        const maskImage = new Image();
+        maskImage.onload = () => {
+          const candidateCanvas = document.createElement("canvas");
+          candidateCanvas.width = viewCanvas.width;
+          candidateCanvas.height = viewCanvas.height;
+          candidateCanvas.getContext("2d").drawImage(maskImage, 0, 0, candidateCanvas.width, candidateCanvas.height);
+          state.sam.candidateMask = candidateCanvas;
+          state.sam.score = payload.score;
+          updateSamPointStats();
+          render();
+          setSamStatus(`SAM candidate generated, score=${Number(payload.score ?? 0).toFixed(3)}. Click "Apply Candidate" to merge it into the mask.`);
+        };
+        maskImage.src = payload.mask;
+      } catch (error) {
+        state.sam.ready = false;
+        setSamStatus(`SAM inference failed: ${error.message}`, true);
+      } finally {
+        state.sam.loading = false;
+        runSamBtn.disabled = false;
+      }
+    }
+
+    function applySamCandidate() {
+      if (!state.sam.candidateMask || !state.imageElement) return;
+      snapshotMask();
+      maskCtx.save();
+      maskCtx.globalCompositeOperation = "source-over";
+      maskCtx.drawImage(state.sam.candidateMask, 0, 0, maskCanvas.width, maskCanvas.height);
+      maskCtx.restore();
+      resetSamCandidate();
+      render();
+      updateStats();
+      setSamStatus("SAM candidate applied to the current mask.");
+    }
+
+    function loadMask(entry, preserveHistory = false) {
+      const source = resolveMaskSource(entry);
+      const candidates = Array.isArray(source) ? source : [source];
+      maskCtx.clearRect(0, 0, maskCanvas.width, maskCanvas.height);
+
+      const tryLoad = (index) => {
+        if (index >= candidates.length) {
+          render();
+          updateStats();
+          if (!preserveHistory) resetHistory();
+          return;
+        }
+        const img = new Image();
+        img.onload = () => {
+          maskCtx.clearRect(0, 0, maskCanvas.width, maskCanvas.height);
+          maskCtx.drawImage(img, 0, 0, maskCanvas.width, maskCanvas.height);
+          render();
+          updateStats();
+          if (!preserveHistory) resetHistory();
+        };
+        img.onerror = () => tryLoad(index + 1);
+        img.src = candidates[index];
+      };
+
+      tryLoad(0);
+    }
+
+    function selectEntry(index) {
+      const entry = state.entries[index];
+      if (!entry) return;
+      state.currentIndex = index;
+      clearSamPrompts();
+      imageName.textContent = entry.image;
+      imageMeta.textContent = entry.mask ? `Preset mask: ${entry.mask}` : "No preset mask found. Starting from a blank mask.";
+
+      const existingMeta = state.metadata[entry.image] || {
+        question: "",
+        answer: "",
+        task_type: "",
+        task_domain: "",
+        num_instances: 1,
+        hallucination: 0
+      };
+      questionInput.value = existingMeta.question;
+      answerInput.value = existingMeta.answer;
+      taskTypeInput.value = existingMeta.task_type;
+      taskDomainInput.value = existingMeta.task_domain;
+      numInstancesInput.value = existingMeta.num_instances;
+      hallucinationInput.value = existingMeta.hallucination;
+      setMetaStatus(existingMeta.question || existingMeta.answer ? "Loaded saved metadata." : "No metadata saved yet.");
+      [...imageListEl.children].forEach((node, i) => node.classList.toggle("active", i === index));
+
+      const img = new Image();
+      img.onload = () => {
+        state.imageElement = img;
+        state.imageSource = resolveImageSource(entry.image);
+        viewCanvas.width = img.naturalWidth;
+        viewCanvas.height = img.naturalHeight;
+        maskCanvas.width = img.naturalWidth;
+        maskCanvas.height = img.naturalHeight;
+        resetHistory();
+        loadMask(entry);
+      };
+      img.src = resolveImageSource(entry.image);
+    }
+
+    function rebuildImageList() {
+      imageListEl.innerHTML = "";
+      state.entries.forEach((entry, index) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "image-item";
+        button.innerHTML = `${index + 1}. ${entry.image}<small>${entry.mask ? `mask: ${entry.mask}` : "mask: none"}</small>`;
+        button.addEventListener("click", () => selectEntry(index));
+        imageListEl.appendChild(button);
+      });
+    }
+
+    function buildEntriesFromFiles(files) {
+      const names = new Set(files.map((file) => file.name));
+      const masks = new Map();
+      const images = [];
+      files.forEach((file) => {
+        const lower = file.name.toLowerCase();
+        const base = file.name.replace(/\.[^.]+$/, "");
+        const pairedJpg = names.has(`${base}.jpg`) || names.has(`${base}.jpeg`);
+        const isMaskPng = /_mask\.png$/i.test(lower) || (/\.png$/i.test(lower) && pairedJpg);
+
+        if (isMaskPng) {
+          masks.set(file.name, file.name);
+          return;
+        }
+
+        if (/\.(jpg|jpeg|png)$/i.test(file.name)) {
+          images.push(file.name);
+        }
+      });
+
+      const nextEntries = images.map((image) => {
+        const base = image.replace(/\.[^.]+$/, "");
+        const explicitMask = masks.get(`${base}_mask.png`) || masks.get(`${base}.png`) || null;
+        return { image, mask: explicitMask };
+      });
+
+      nextEntries.sort((a, b) => a.image.localeCompare(b.image));
+      return nextEntries;
+    }
+
+    function handleFiles(fileList) {
+      const files = Array.from(fileList);
+      files.forEach((file) => createObjectUrl(file));
+
+      const derivedEntries = buildEntriesFromFiles(files);
+      if (derivedEntries.length > 0) {
+        state.entries = derivedEntries;
+        rebuildImageList();
+        selectEntry(0);
+      }
+    }
+
+    function downloadMask() {
+      const entry = state.entries[state.currentIndex];
+      if (!entry || !state.imageElement) return;
+
+      const exportCanvas = document.createElement("canvas");
+      exportCanvas.width = maskCanvas.width;
+      exportCanvas.height = maskCanvas.height;
+      const exportCtx = exportCanvas.getContext("2d");
+      exportCtx.fillStyle = "black";
+      exportCtx.fillRect(0, 0, exportCanvas.width, exportCanvas.height);
+
+      const data = maskCtx.getImageData(0, 0, maskCanvas.width, maskCanvas.height);
+      const exportData = exportCtx.getImageData(0, 0, exportCanvas.width, exportCanvas.height);
+      for (let i = 0; i < data.data.length; i += 4) {
+        const value = data.data[i + 3] > 0 ? 255 : 0;
+        exportData.data[i] = value;
+        exportData.data[i + 1] = value;
+        exportData.data[i + 2] = value;
+        exportData.data[i + 3] = 255;
+      }
+      exportCtx.putImageData(exportData, 0, 0);
+
+      const link = document.createElement("a");
+      link.href = exportCanvas.toDataURL("image/png");
+      link.download = getMaskDownloadName(entry);
+      link.click();
+    }
+
+    function encodeRleFromMask() {
+      const width = maskCanvas.width;
+      const height = maskCanvas.height;
+      const data = maskCtx.getImageData(0, 0, width, height).data;
+
+      const counts = [];
+      let count = 0;
+      let prev = 0;
+
+      for (let x = 0; x < width; x += 1) {
+        for (let y = 0; y < height; y += 1) {
+          const idx = (y * width + x) * 4 + 3;
+          const value = data[idx] > 0 ? 1 : 0;
+          if (value === prev) {
+            count += 1;
+          } else {
+            counts.push(count);
+            count = 1;
+            prev = value;
+          }
+        }
+      }
+      counts.push(count);
+
+      return { size: [height, width], counts };
+    }
+
+    function computeMaskStats() {
+      const width = maskCanvas.width;
+      const height = maskCanvas.height;
+      const data = maskCtx.getImageData(0, 0, width, height).data;
+      let minX = width;
+      let minY = height;
+      let maxX = -1;
+      let maxY = -1;
+      let area = 0;
+
+      for (let y = 0; y < height; y += 1) {
+        for (let x = 0; x < width; x += 1) {
+          const idx = (y * width + x) * 4 + 3;
+          if (data[idx] > 0) {
+            area += 1;
+            if (x < minX) minX = x;
+            if (y < minY) minY = y;
+            if (x > maxX) maxX = x;
+            if (y > maxY) maxY = y;
+          }
+        }
+      }
+
+      if (area === 0) {
+        return { bbox: [0, 0, 0, 0], area: 0 };
+      }
+      return { bbox: [minX, minY, maxX - minX + 1, maxY - minY + 1], area };
+    }
+
+    function downloadRle() {
+      const entry = state.entries[state.currentIndex];
+      if (!entry || !state.imageElement) return;
+
+      const rle = encodeRleFromMask();
+      const blob = new Blob([JSON.stringify(rle)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+
+      const base = entry.image.replace(/\.[^.]+$/, "");
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${base}_mask_rle.json`;
+      link.click();
+
+      URL.revokeObjectURL(url);
+    }
+
+    function buildMetadataPayload() {
+      const entry = state.entries[state.currentIndex];
+      if (!entry) return null;
+      const base = entry.image.replace(/\.[^.]+$/, "");
+      const imageId = deriveImageId(entry.image);
+      return {
+        image: {
+          image_id: imageId,
+          width: maskCanvas.width,
+          height: maskCanvas.height,
+          file_name: entry.image
+        },
+        mask_path: `${base}_mask.png`,
+        rle_path: `${base}_mask_rle.json`,
+        question: questionInput.value.trim(),
+        answer: answerInput.value.trim(),
+        task_type: taskTypeInput.value.trim(),
+        task_domain: taskDomainInput.value.trim(),
+        num_instances: Number(numInstancesInput.value || 0),
+        hallucination: Number(hallucinationInput.value || 0)
+      };
+    }
+
+    function saveMetadata() {
+      const entry = state.entries[state.currentIndex];
+      if (!entry) return;
+      const rle = encodeRleFromMask();
+      const { bbox, area } = computeMaskStats();
+      const imageId = deriveImageId(entry.image);
+      const annotationId = imageId * 1000 + 1;
+
+      state.metadata[entry.image] = {
+        question: questionInput.value.trim(),
+        answer: answerInput.value.trim(),
+        task_type: taskTypeInput.value.trim(),
+        task_domain: taskDomainInput.value.trim(),
+        num_instances: Number(numInstancesInput.value || 0),
+        hallucination: Number(hallucinationInput.value || 0),
+        segmentation: rle,
+        bbox,
+        area,
+        image: {
+          image_id: imageId,
+          width: maskCanvas.width,
+          height: maskCanvas.height,
+          file_name: entry.image
+        },
+        annotation_id: annotationId
+      };
+      setMetaStatus("Metadata saved in browser session.");
+    }
+
+    function downloadMetadata() {
+      const payload = buildMetadataPayload();
+      if (!payload) return;
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const base = payload.image.replace(/\.[^.]+$/, "");
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = `${base}_meta.json`;
+      link.click();
+      URL.revokeObjectURL(url);
+      setMetaStatus("Metadata downloaded.");
+    }
+
+    function buildSummaryPayload() {
+      const records = [];
+      state.entries.forEach((entry) => {
+        const stored = state.metadata[entry.image];
+        if (!stored) return;
+        records.push({
+          image: stored.image,
+          question: stored.question,
+          answer: stored.answer,
+          task_type: stored.task_type,
+          task_domain: stored.task_domain,
+          num_instances: stored.num_instances,
+          hallucination: stored.hallucination,
+          annotations: [
+            {
+              id: stored.annotation_id,
+              segmentation: stored.segmentation,
+              bbox: stored.bbox,
+              area: stored.area
+            }
+          ]
+        });
+      });
+      return records;
+    }
+
+    function downloadSummary() {
+      const payload = buildSummaryPayload();
+      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = "annotations_summary.json";
+      link.click();
+      URL.revokeObjectURL(url);
+      setMetaStatus("Summary downloaded.");
+    }
+
+    function beginStroke(event) {
+      if (!state.imageElement) return;
+      event.preventDefault();
+      if (state.tool === "sam") {
+        const point = getCanvasPoint(event);
+        const label = event.altKey ? 0 : 1;
+        state.sam.prompts.push({ x: point.x, y: point.y, label });
+        resetSamCandidate();
+        updateSamPointStats();
+        render();
+        setSamStatus(label === 1 ? "Added a positive SAM prompt." : "Added a negative SAM prompt.");
+        return;
+      }
+      snapshotMask();
+      state.drawing = true;
+      const point = getCanvasPoint(event);
+      state.lastPoint = point;
+      drawSegment(point, point);
+      render();
+      updateStats();
+    }
+
+    function moveStroke(event) {
+      if (state.tool === "sam") return;
+      if (!state.drawing || !state.lastPoint) return;
+      const point = getCanvasPoint(event);
+      drawSegment(state.lastPoint, point);
+      state.lastPoint = point;
+      render();
+      updateStats();
+    }
+
+    function endStroke() {
+      state.drawing = false;
+      state.lastPoint = null;
+    }
+
+    brushBtn.addEventListener("click", () => setTool("brush"));
+    eraseBtn.addEventListener("click", () => setTool("erase"));
+    samBtn.addEventListener("click", () => setTool("sam"));
+
+    undoBtn.addEventListener("click", () => {
+      if (state.undoStack.length === 0) return;
+      state.redoStack.push(maskCtx.getImageData(0, 0, maskCanvas.width, maskCanvas.height));
+      restoreImageData(state.undoStack.pop());
+      syncUndoButtons();
+    });
+
+    redoBtn.addEventListener("click", () => {
+      if (state.redoStack.length === 0) return;
+      state.undoStack.push(maskCtx.getImageData(0, 0, maskCanvas.width, maskCanvas.height));
+      restoreImageData(state.redoStack.pop());
+      syncUndoButtons();
+    });
+
+    fillBtn.addEventListener("click", () => {
+      if (!state.imageElement) return;
+      snapshotMask();
+      maskCtx.fillStyle = "rgba(255,255,255,1)";
+      maskCtx.fillRect(0, 0, maskCanvas.width, maskCanvas.height);
+      render();
+      updateStats();
+    });
+
+    clearBtn.addEventListener("click", () => {
+      if (!state.imageElement) return;
+      snapshotMask();
+      maskCtx.clearRect(0, 0, maskCanvas.width, maskCanvas.height);
+      render();
+      updateStats();
+    });
+
+    loadMaskBtn.addEventListener("click", () => {
+      const entry = state.entries[state.currentIndex];
+      if (!entry || !state.imageElement) return;
+      loadMask(entry);
+    });
+
+    toggleMaskBtn.addEventListener("click", () => {
+      state.showMask = !state.showMask;
+      toggleMaskBtn.classList.toggle("active", state.showMask);
+      toggleMaskBtn.textContent = state.showMask ? "Overlay On" : "Overlay Off";
+      render();
+    });
+
+    downloadBtn.addEventListener("click", downloadMask);
+    downloadRleBtn.addEventListener("click", downloadRle);
+    runSamBtn.addEventListener("click", runSam);
+    applySamBtn.addEventListener("click", applySamCandidate);
+    clearSamBtn.addEventListener("click", () => {
+      clearSamPrompts();
+      setSamStatus("SAM prompts cleared.");
+    });
+    retrySamStatusBtn.addEventListener("click", checkSamService);
+    saveMetaBtn.addEventListener("click", saveMetadata);
+    downloadMetaBtn.addEventListener("click", downloadMetadata);
+    downloadSummaryBtn.addEventListener("click", downloadSummary);
+
+    brushSizeInput.addEventListener("input", () => {
+      state.brushSize = Number(brushSizeInput.value);
+      brushSizeValue.textContent = String(state.brushSize);
+    });
+
+    opacityInput.addEventListener("input", () => {
+      state.overlayOpacity = Number(opacityInput.value);
+      opacityValue.textContent = state.overlayOpacity.toFixed(2);
+      render();
+    });
+
+    fileInput.addEventListener("change", (event) => {
+      if (event.target.files?.length) handleFiles(event.target.files);
+    });
+
+    viewCanvas.addEventListener("pointerdown", beginStroke);
+    viewCanvas.addEventListener("pointermove", moveStroke);
+    window.addEventListener("pointerup", endStroke);
+    window.addEventListener("pointercancel", endStroke);
+
+    window.addEventListener("keydown", (event) => {
+      if (event.key === "b" || event.key === "B") setTool("brush");
+      if (event.key === "e" || event.key === "E") setTool("erase");
+      if (event.key === "s" || event.key === "S") setTool("sam");
+      if (event.key === "[") {
+        state.brushSize = Math.max(2, state.brushSize - 2);
+        brushSizeInput.value = String(state.brushSize);
+        brushSizeValue.textContent = String(state.brushSize);
+      }
+      if (event.key === "]") {
+        state.brushSize = Math.min(160, state.brushSize + 2);
+        brushSizeInput.value = String(state.brushSize);
+        brushSizeValue.textContent = String(state.brushSize);
+      }
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "z") {
+        event.preventDefault();
+        if (event.shiftKey) {
+          redoBtn.click();
+        } else {
+          undoBtn.click();
+        }
+      }
+    });
+
+    state.entries = builtInEntries;
+    rebuildImageList();
+    render();
+    syncUndoButtons();
+    updateSamPointStats();
+    checkSamService();
+    selectEntry(0);
+  </script>
+</body>
+</html>

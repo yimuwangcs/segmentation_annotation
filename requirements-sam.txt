@@ -1,0 +1,6 @@
+fastapi>=0.110
+uvicorn>=0.29
+numpy>=1.24
+pillow>=10.0
+torch>=2.1
+git+https://github.com/facebookresearch/segment-anything.git
