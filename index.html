@@ -162,6 +162,12 @@
       margin-top: 4px;
     }
 
+    .progress-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
     .sam-points {
       display: flex;
       flex-wrap: wrap;
@@ -226,11 +232,8 @@
     }
 
     .main-top {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(320px, 520px);
-      gap: 16px;
+      display: block;
       padding: 8px 8px 0;
-      align-items: start;
     }
 
     .meta h2 {
@@ -244,20 +247,15 @@
     }
 
     .top-right {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      display: flex;
+      flex-direction: column;
       gap: 12px;
-      align-items: start;
     }
 
     .grid-item {
       display: flex;
       flex-direction: column;
       gap: 8px;
-    }
-
-    .full-height {
-      align-self: stretch;
     }
 
     .compact-toolbar {
@@ -270,6 +268,33 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 10px;
+    }
+
+    .qa-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      align-items: end;
+    }
+
+    .qa-pair {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .qa-row .text-input.small {
+      min-height: 44px;
+    }
+
+    .readonly-box {
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.85);
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.9rem;
+      word-break: break-all;
     }
 
 
@@ -287,6 +312,49 @@
     .text-input.small {
       min-height: 44px;
       resize: none;
+    }
+
+    .checkbox-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .checkbox-row label {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+
+    .mask-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      max-height: 220px;
+      overflow: auto;
+    }
+
+    .mask-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.75);
+      box-shadow: inset 0 0 0 1px var(--line);
+      cursor: pointer;
+    }
+
+    .mask-item.active {
+      border-color: rgba(15, 118, 110, 0.45);
+      box-shadow: inset 0 0 0 2px rgba(15, 118, 110, 0.45);
+    }
+
+    .mask-item small {
+      color: var(--muted);
     }
 
     .canvas-wrap {
@@ -356,9 +424,27 @@
       </div>
 
       <div class="section">
-        <span class="section-label">Data</span>
-        <label class="upload" for="fileInput">Import Images / Masks</label>
-        <input id="fileInput" type="file" accept=".jpg,.jpeg,.png,image/png,image/jpeg" multiple />
+        <span class="section-label">Progress</span>
+        <div class="stat-grid">
+          <div class="stat">QA Num<b id="qaCount">0</b></div>
+          <div class="stat">Types<b id="typeCount">0</b></div>
+        </div>
+        <div id="typeBreakdown" class="progress-list"></div>
+      </div>
+
+      <div class="section">
+        <span class="section-label">nuImages</span>
+        <label for="nuimagesPath">Root Path</label>
+        <input id="nuimagesPath" class="text-input small" value="/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples" />
+        <div class="checkbox-row">
+          <label><input id="filterFront" type="checkbox" checked /> CAM_FRONT</label>
+          <label><input id="filterFrontLeft" type="checkbox" checked /> CAM_FRONT_LEFT</label>
+          <label><input id="filterFrontRight" type="checkbox" checked /> CAM_FRONT_RIGHT</label>
+        </div>
+        <div class="toolbar">
+          <button id="loadNuImagesBtn" type="button">Load nuImages</button>
+        </div>
+        <div id="nuimagesStatus" class="sam-status">No nuImages list loaded.</div>
       </div>
 
       <div class="section">
@@ -391,6 +477,17 @@
       </div>
 
       <div class="section">
+        <span class="section-label">Masks</span>
+        <div class="toolbar">
+          <button id="addMaskBtn" type="button">Add Mask</button>
+          <button id="removeMaskBtn" type="button">Remove Mask</button>
+        </div>
+        <label for="maskLabelInput">Mask Label</label>
+        <input id="maskLabelInput" class="text-input small" placeholder="e.g. vehicle" />
+        <div id="maskList" class="mask-list"></div>
+      </div>
+
+      <div class="section">
         <span class="section-label">SAM</span>
         <div class="toolbar">
           <button id="runSamBtn" type="button">Run SAM</button>
@@ -413,50 +510,61 @@
 
     <main class="panel main">
       <div class="main-top">
-        <div class="meta">
-          <h2 id="imageName">No Image Selected</h2>
-          <p id="imageMeta">Open this HTML directly, or serve this directory with a local static server for more reliable file loading.</p>
-        </div>
+        <div class="meta"></div>
         <div class="top-right">
-          <div class="grid-item">
-            <label for="questionInput">Question</label>
-            <textarea id="questionInput" class="text-input" placeholder="Type the question for this image..."></textarea>
-          </div>
-          <div class="grid-item full-height">
-            <label>All Buttons</label>
-            <div class="all-buttons">
-              <button id="loadMaskBtn" type="button">Reload Mask</button>
-              <button id="toggleMaskBtn" class="active" type="button">Overlay On</button>
-              <button id="downloadBtn" type="button">Download Mask</button>
-              <button id="downloadRleBtn" type="button">Download RLE</button>
-              <button id="saveMetaBtn" type="button">Save Metadata</button>
-              <button id="downloadMetaBtn" type="button">Download Metadata</button>
-              <button id="downloadSummaryBtn" type="button">Download Summary</button>
+          <div class="qa-pair">
+            <div class="grid-item">
+              <label for="questionInput">Question</label>
+              <textarea id="questionInput" class="text-input" placeholder="Type the question for this image..."></textarea>
             </div>
-            <div id="metaStatus" class="sam-status">No metadata saved yet.</div>
-          </div>
-          <div class="grid-item full-height">
-            <label for="answerInput">Answer</label>
-            <textarea id="answerInput" class="text-input" placeholder="Type the answer for this image..."></textarea>
-            <div class="qa-grid">
-              <div>
-                <label for="taskTypeInput">Task Type</label>
-                <input id="taskTypeInput" class="text-input small" placeholder="e.g. attribute" />
-              </div>
-              <div>
-                <label for="taskDomainInput">Task Domain</label>
-                <input id="taskDomainInput" class="text-input small" placeholder="e.g. science" />
-              </div>
-              <div>
-                <label for="numInstancesInput">Num Instances</label>
-                <input id="numInstancesInput" class="text-input small" type="number" min="0" step="1" value="1" />
-              </div>
-              <div>
-                <label for="hallucinationInput">Hallucination</label>
-                <input id="hallucinationInput" class="text-input small" type="number" min="0" step="1" value="0" />
-              </div>
+            <div class="grid-item">
+              <label for="answerInput">Answer</label>
+              <textarea id="answerInput" class="text-input" placeholder="Type the answer for this image..."></textarea>
             </div>
           </div>
+          <div class="qa-row">
+            <div>
+              <label for="taskTypeInput">Task Type</label>
+              <select id="taskTypeInput" class="text-input small">
+                <option value="">Select</option>
+                <option value="Identification">Identification</option>
+                <option value="Attribute">Attribute</option>
+                <option value="OCR">OCR</option>
+                <option value="Spatial Comparison">Spatial Comparison</option>
+                <option value="Countering/Ordering">Countering/Ordering</option>
+              </select>
+            </div>
+            <div>
+              <label for="taskDomainInput">Task Domain</label>
+              <input id="taskDomainInput" class="text-input small" value="nuscenes" />
+            </div>
+            <div>
+              <label for="numInstancesValue">Num Instances</label>
+              <div id="numInstancesValue" class="readonly-box">0</div>
+            </div>
+            <div>
+              <label for="hallucinationInput">Hallucination</label>
+              <select id="hallucinationInput" class="text-input small">
+                <option value="0">0</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+          </div>
+            <div class="grid-item">
+              <label>All Buttons</label>
+              <div class="all-buttons">
+                <button id="loadMaskBtn" type="button">Reload Mask</button>
+                <button id="toggleMaskBtn" class="active" type="button">Overlay On</button>
+                <button id="downloadBtn" type="button">Download Mask</button>
+                <button id="downloadAllMasksBtn" type="button">Download All Masks</button>
+                <button id="downloadRleBtn" type="button">Download RLE</button>
+                <button id="saveMetaBtn" type="button">Save QA Pair</button>
+                <button id="downloadSummaryBtn" type="button">Download Summary</button>
+                <button id="skipImageBtn" type="button">Skip Image</button>
+              </div>
+              <div id="metaStatus" class="sam-status">No QA pair saved yet.</div>
+              <div id="progressStatus" class="sam-status">No progress saved.</div>
+            </div>
         </div>
       </div>
 
@@ -499,7 +607,13 @@
       imageBitmapUrl: null,
       undoStack: [],
       redoStack: [],
+      masks: [],
+      activeMaskId: null,
       metadata: {},
+      nuimages: {
+        rootPath: "",
+        channels: ["CAM_FRONT", "CAM_FRONT_LEFT", "CAM_FRONT_RIGHT"]
+      },
       sam: {
         endpoint: "http://127.0.0.1:8001",
         ready: false,
@@ -514,8 +628,8 @@
 
     const viewCanvas = document.getElementById("viewCanvas");
     const viewCtx = viewCanvas.getContext("2d");
-    const maskCanvas = document.createElement("canvas");
-    const maskCtx = maskCanvas.getContext("2d", { willReadFrequently: true });
+    let maskCanvas = document.createElement("canvas");
+    let maskCtx = maskCanvas.getContext("2d", { willReadFrequently: true });
     const imageListEl = document.getElementById("imageList");
     const brushBtn = document.getElementById("brushBtn");
     const eraseBtn = document.getElementById("eraseBtn");
@@ -527,33 +641,45 @@
     const loadMaskBtn = document.getElementById("loadMaskBtn");
     const toggleMaskBtn = document.getElementById("toggleMaskBtn");
     const downloadBtn = document.getElementById("downloadBtn");
+    const downloadAllMasksBtn = document.getElementById("downloadAllMasksBtn");
     const runSamBtn = document.getElementById("runSamBtn");
     const applySamBtn = document.getElementById("applySamBtn");
     const clearSamBtn = document.getElementById("clearSamBtn");
     const retrySamStatusBtn = document.getElementById("retrySamStatusBtn");
     const downloadRleBtn = document.getElementById("downloadRleBtn");
-    const fileInput = document.getElementById("fileInput");
+    const nuimagesPath = document.getElementById("nuimagesPath");
+    const filterFront = document.getElementById("filterFront");
+    const filterFrontLeft = document.getElementById("filterFrontLeft");
+    const filterFrontRight = document.getElementById("filterFrontRight");
+    const loadNuImagesBtn = document.getElementById("loadNuImagesBtn");
+    const nuimagesStatus = document.getElementById("nuimagesStatus");
     const brushSizeInput = document.getElementById("brushSize");
     const opacityInput = document.getElementById("opacity");
     const brushSizeValue = document.getElementById("brushSizeValue");
     const opacityValue = document.getElementById("opacityValue");
-    const imageName = document.getElementById("imageName");
-    const imageMeta = document.getElementById("imageMeta");
     const sizeStat = document.getElementById("sizeStat");
     const pixelStat = document.getElementById("pixelStat");
     const samStatus = document.getElementById("samStatus");
     const samPositiveCount = document.getElementById("samPositiveCount");
     const samNegativeCount = document.getElementById("samNegativeCount");
+    const qaCount = document.getElementById("qaCount");
+    const typeCount = document.getElementById("typeCount");
+    const typeBreakdown = document.getElementById("typeBreakdown");
+    const addMaskBtn = document.getElementById("addMaskBtn");
+    const removeMaskBtn = document.getElementById("removeMaskBtn");
+    const maskLabelInput = document.getElementById("maskLabelInput");
+    const maskList = document.getElementById("maskList");
     const questionInput = document.getElementById("questionInput");
     const answerInput = document.getElementById("answerInput");
     const taskTypeInput = document.getElementById("taskTypeInput");
     const taskDomainInput = document.getElementById("taskDomainInput");
-    const numInstancesInput = document.getElementById("numInstancesInput");
     const hallucinationInput = document.getElementById("hallucinationInput");
+    const numInstancesValue = document.getElementById("numInstancesValue");
     const saveMetaBtn = document.getElementById("saveMetaBtn");
-    const downloadMetaBtn = document.getElementById("downloadMetaBtn");
     const downloadSummaryBtn = document.getElementById("downloadSummaryBtn");
     const metaStatus = document.getElementById("metaStatus");
+    const progressStatus = document.getElementById("progressStatus");
+    const skipImageBtn = document.getElementById("skipImageBtn");
 
     function setTool(tool) {
       state.tool = tool;
@@ -576,14 +702,131 @@
       applySamBtn.disabled = !state.sam.candidateMask;
     }
 
+    function updateNumInstances() {
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
+      const count = isHallucination ? 0 : state.masks.length;
+      numInstancesValue.textContent = String(count);
+    }
+
+    function ensureMaskState() {
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
+      if (isHallucination) {
+        state.masks = [];
+        state.activeMaskId = null;
+        maskCanvas = document.createElement("canvas");
+        maskCanvas.width = viewCanvas.width || 1;
+        maskCanvas.height = viewCanvas.height || 1;
+        maskCtx = maskCanvas.getContext("2d", { willReadFrequently: true });
+        updateMaskList();
+        updateStats();
+        render();
+        return;
+      }
+
+      if (state.masks.length === 0) {
+        const newMask = createMaskEntry("");
+        state.masks.push(newMask);
+        setActiveMask(newMask.id);
+      }
+    }
+
+    function createMaskEntry(label = "") {
+      const canvas = document.createElement("canvas");
+      canvas.width = viewCanvas.width || 1;
+      canvas.height = viewCanvas.height || 1;
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+      return {
+        id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+        label,
+        canvas,
+        ctx
+      };
+    }
+
+    function setActiveMask(maskId) {
+      const entry = state.masks.find((item) => item.id === maskId);
+      if (!entry) return;
+      state.activeMaskId = maskId;
+      maskCanvas = entry.canvas;
+      maskCtx = entry.ctx;
+      maskLabelInput.value = entry.label;
+      updateMaskList();
+      updateStats();
+      updateNumInstances();
+      render();
+    }
+
+    function updateMaskList() {
+      maskList.innerHTML = "";
+      state.masks.forEach((item, index) => {
+        const button = document.createElement("div");
+        button.className = `mask-item${item.id === state.activeMaskId ? " active" : ""}`;
+        button.innerHTML = `<div>Mask ${index + 1}<small>${item.label || "no label"}</small></div>`;
+        button.addEventListener("click", () => setActiveMask(item.id));
+        maskList.appendChild(button);
+      });
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
+      removeMaskBtn.disabled = isHallucination ? state.masks.length === 0 : state.masks.length <= 1;
+      updateNumInstances();
+    }
+
+    function syncMaskSizes(width, height) {
+      state.masks.forEach((item) => {
+        item.canvas.width = width;
+        item.canvas.height = height;
+        item.ctx = item.canvas.getContext("2d", { willReadFrequently: true });
+      });
+      if (state.activeMaskId && state.masks.length > 0) {
+        const active = state.masks.find((item) => item.id === state.activeMaskId) || state.masks[0];
+        maskCanvas = active.canvas;
+        maskCtx = active.ctx;
+      }
+    }
+
     function setMetaStatus(message, isError = false) {
       metaStatus.textContent = message;
       metaStatus.style.color = isError ? "var(--danger)" : "var(--muted)";
     }
 
+    function setProgressStatus(message, isError = false) {
+      progressStatus.textContent = message;
+      progressStatus.style.color = isError ? "var(--danger)" : "var(--muted)";
+    }
+
+    function setNuImagesStatus(message, isError = false) {
+      nuimagesStatus.textContent = message;
+      nuimagesStatus.style.color = isError ? "var(--danger)" : "var(--muted)";
+    }
+
+    async function refreshProgressSummary() {
+      try {
+        const response = await fetch(`${state.sam.endpoint}/progress/summary`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const payload = await response.json();
+        qaCount.textContent = String(payload.qa_total ?? 0);
+        const entries = payload.type_counts || {};
+        typeCount.textContent = String(Object.keys(entries).length);
+        typeBreakdown.innerHTML = "";
+        Object.entries(entries).forEach(([key, value]) => {
+          const row = document.createElement("div");
+          row.className = "stat";
+          row.textContent = `${key}: ${value}`;
+          typeBreakdown.appendChild(row);
+        });
+      } catch (error) {
+        qaCount.textContent = "0";
+        typeCount.textContent = "0";
+        typeBreakdown.innerHTML = "";
+      }
+    }
+
     function updateStats() {
       sizeStat.textContent = state.imageElement ? `${maskCanvas.width} × ${maskCanvas.height}` : "-";
       if (!state.imageElement) {
+        pixelStat.textContent = "0";
+        return;
+      }
+      if (!state.activeMaskId) {
         pixelStat.textContent = "0";
         return;
       }
@@ -718,6 +961,14 @@
     function resolveImageSource(name) {
       const info = fileMap.get(name);
       return info ? info.url : name;
+    }
+
+    function resolveEntryImage(entry) {
+      if (entry.abs_path) {
+        const path = encodeURIComponent(entry.abs_path);
+        return `${state.sam.endpoint}/nuimages/image?path=${path}`;
+      }
+      return resolveImageSource(entry.image);
     }
 
     function resolveMaskSource(entry) {
@@ -897,22 +1148,19 @@
       if (!entry) return;
       state.currentIndex = index;
       clearSamPrompts();
-      imageName.textContent = entry.image;
-      imageMeta.textContent = entry.mask ? `Preset mask: ${entry.mask}` : "No preset mask found. Starting from a blank mask.";
 
       const existingMeta = state.metadata[entry.image] || {
         question: "",
         answer: "",
         task_type: "",
-        task_domain: "",
-        num_instances: 1,
-        hallucination: 0
+        task_domain: "nuscenes",
+        hallucination: 0,
+        annotations: []
       };
       questionInput.value = existingMeta.question;
       answerInput.value = existingMeta.answer;
       taskTypeInput.value = existingMeta.task_type;
       taskDomainInput.value = existingMeta.task_domain;
-      numInstancesInput.value = existingMeta.num_instances;
       hallucinationInput.value = existingMeta.hallucination;
       setMetaStatus(existingMeta.question || existingMeta.answer ? "Loaded saved metadata." : "No metadata saved yet.");
       [...imageListEl.children].forEach((node, i) => node.classList.toggle("active", i === index));
@@ -920,15 +1168,26 @@
       const img = new Image();
       img.onload = () => {
         state.imageElement = img;
-        state.imageSource = resolveImageSource(entry.image);
+        state.imageSource = resolveEntryImage(entry);
         viewCanvas.width = img.naturalWidth;
         viewCanvas.height = img.naturalHeight;
-        maskCanvas.width = img.naturalWidth;
-        maskCanvas.height = img.naturalHeight;
+        syncMaskSizes(img.naturalWidth, img.naturalHeight);
+        ensureMaskState();
+        if (state.masks.length === 0) {
+          const newMask = createMaskEntry("");
+          state.masks.push(newMask);
+          setActiveMask(newMask.id);
+        } else if (state.activeMaskId) {
+          setActiveMask(state.activeMaskId);
+        } else {
+          setActiveMask(state.masks[0].id);
+        }
         resetHistory();
         loadMask(entry);
       };
-      img.src = resolveImageSource(entry.image);
+      img.src = resolveEntryImage(entry);
+
+      fetchProgress(entry);
     }
 
     function rebuildImageList() {
@@ -937,7 +1196,8 @@
         const button = document.createElement("button");
         button.type = "button";
         button.className = "image-item";
-        button.innerHTML = `${index + 1}. ${entry.image}<small>${entry.mask ? `mask: ${entry.mask}` : "mask: none"}</small>`;
+        const channel = entry.channel ? `channel: ${entry.channel}` : `mask: ${entry.mask ?? "none"}`;
+        button.innerHTML = `${index + 1}. ${entry.image}<small>${channel}</small>`;
         button.addEventListener("click", () => selectEntry(index));
         imageListEl.appendChild(button);
       });
@@ -985,6 +1245,102 @@
       }
     }
 
+    async function loadNuImages() {
+      const rootPath = nuimagesPath.value.trim();
+      const channels = [];
+      if (filterFront.checked) channels.push("CAM_FRONT");
+      if (filterFrontLeft.checked) channels.push("CAM_FRONT_LEFT");
+      if (filterFrontRight.checked) channels.push("CAM_FRONT_RIGHT");
+
+      if (!rootPath) {
+        setNuImagesStatus("Root path is required.", true);
+        return;
+      }
+      if (channels.length === 0) {
+        setNuImagesStatus("Select at least one camera channel.", true);
+        return;
+      }
+
+      setNuImagesStatus("Loading nuImages list...");
+      try {
+        const progressResponse = await fetch(`${state.sam.endpoint}/progress/list`);
+        const progressPayload = progressResponse.ok ? await progressResponse.json() : { entries: {} };
+        const progressEntries = progressPayload.entries || {};
+        const progressValues = Object.values(progressEntries);
+        const labeledCount = progressValues.filter((item) => item?.status === "labeled").length;
+        const skippedCount = progressValues.filter((item) => item?.status === "skipped").length;
+        refreshProgressSummary();
+
+        const response = await fetch(`${state.sam.endpoint}/nuimages/list`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ root_path: rootPath, channels })
+        });
+        if (!response.ok) {
+          const detail = await response.text();
+          throw new Error(detail || `HTTP ${response.status}`);
+        }
+        const payload = await response.json();
+        state.entries = payload.items
+          .filter((item) => !progressEntries[item.abs_path])
+          .map((item) => ({
+            image: item.file_name.split("/").pop(),
+            abs_path: item.abs_path,
+            channel: item.channel,
+            mask: null
+          }));
+        rebuildImageList();
+        if (state.entries.length > 0) selectEntry(0);
+        const filtered = payload.count - state.entries.length;
+        setNuImagesStatus(
+          `Loaded ${state.entries.length} items. Labeled: ${labeledCount}, Skipped: ${skippedCount}, Filtered: ${filtered}. Remaining: ${state.entries.length}.`
+        );
+      } catch (error) {
+        setNuImagesStatus(`Failed to load nuImages: ${error.message}`, true);
+      }
+    }
+
+    async function fetchProgress(entry) {
+      if (!entry?.abs_path) {
+        setProgressStatus("No progress saved.");
+        return;
+      }
+      try {
+        const response = await fetch(`${state.sam.endpoint}/progress/status?file_name=${encodeURIComponent(entry.abs_path)}`);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const payload = await response.json();
+        if (payload.entry) {
+          setProgressStatus(`Progress: ${payload.entry.status} @ ${payload.entry.updated_at}`);
+        } else {
+          setProgressStatus("No progress saved.");
+        }
+      } catch (error) {
+        setProgressStatus(`Progress check failed: ${error.message}`, true);
+      }
+    }
+
+    async function updateProgress(status) {
+      const entry = state.entries[state.currentIndex];
+      if (!entry?.abs_path) {
+        setProgressStatus("No nuImages item selected.", true);
+        return;
+      }
+      try {
+        const response = await fetch(`${state.sam.endpoint}/progress/update`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ file_name: entry.abs_path, status })
+        });
+        if (!response.ok) {
+          const detail = await response.text();
+          throw new Error(detail || `HTTP ${response.status}`);
+        }
+        setProgressStatus(`Progress: ${status}`);
+      } catch (error) {
+        setProgressStatus(`Progress update failed: ${error.message}`, true);
+      }
+    }
+
     function downloadMask() {
       const entry = state.entries[state.currentIndex];
       if (!entry || !state.imageElement) return;
@@ -1013,10 +1369,23 @@
       link.click();
     }
 
-    function encodeRleFromMask() {
-      const width = maskCanvas.width;
-      const height = maskCanvas.height;
-      const data = maskCtx.getImageData(0, 0, width, height).data;
+    function downloadAllMasks() {
+      const entry = state.entries[state.currentIndex];
+      if (!entry || !state.imageElement) return;
+      const base = entry.image.replace(/\.[^.]+$/, "");
+      state.masks.forEach((maskEntry, index) => {
+        const link = document.createElement("a");
+        link.href = maskToDataUrl(maskEntry.canvas);
+        const safeLabel = (maskEntry.label || "unlabeled").replace(/\\s+/g, "_");
+        link.download = `${base}_mask_${safeLabel}_${index + 1}.png`;
+        link.click();
+      });
+    }
+
+    function encodeRleFromMask(canvas, ctx) {
+      const width = canvas.width;
+      const height = canvas.height;
+      const data = ctx.getImageData(0, 0, width, height).data;
 
       const counts = [];
       let count = 0;
@@ -1040,10 +1409,10 @@
       return { size: [height, width], counts };
     }
 
-    function computeMaskStats() {
-      const width = maskCanvas.width;
-      const height = maskCanvas.height;
-      const data = maskCtx.getImageData(0, 0, width, height).data;
+    function computeMaskStats(canvas, ctx) {
+      const width = canvas.width;
+      const height = canvas.height;
+      const data = ctx.getImageData(0, 0, width, height).data;
       let minX = width;
       let minY = height;
       let maxX = -1;
@@ -1073,7 +1442,7 @@
       const entry = state.entries[state.currentIndex];
       if (!entry || !state.imageElement) return;
 
-      const rle = encodeRleFromMask();
+      const rle = encodeRleFromMask(maskCanvas, maskCtx);
       const blob = new Blob([JSON.stringify(rle)], { type: "application/json" });
       const url = URL.createObjectURL(blob);
 
@@ -1091,6 +1460,7 @@
       if (!entry) return null;
       const base = entry.image.replace(/\.[^.]+$/, "");
       const imageId = deriveImageId(entry.image);
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
       return {
         image: {
           image_id: imageId,
@@ -1104,7 +1474,7 @@
         answer: answerInput.value.trim(),
         task_type: taskTypeInput.value.trim(),
         task_domain: taskDomainInput.value.trim(),
-        num_instances: Number(numInstancesInput.value || 0),
+        num_instances: isHallucination ? 0 : state.masks.length,
         hallucination: Number(hallucinationInput.value || 0)
       };
     }
@@ -1112,44 +1482,39 @@
     function saveMetadata() {
       const entry = state.entries[state.currentIndex];
       if (!entry) return;
-      const rle = encodeRleFromMask();
-      const { bbox, area } = computeMaskStats();
       const imageId = deriveImageId(entry.image);
-      const annotationId = imageId * 1000 + 1;
+
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
+      const annotations = isHallucination
+        ? []
+        : state.masks.map((maskEntry, index) => {
+            const rle = encodeRleFromMask(maskEntry.canvas, maskEntry.ctx);
+            const { bbox, area } = computeMaskStats(maskEntry.canvas, maskEntry.ctx);
+            return {
+              id: imageId * 1000 + index + 1,
+              segmentation: rle,
+              bbox,
+              area,
+              label: maskEntry.label
+            };
+          });
 
       state.metadata[entry.image] = {
         question: questionInput.value.trim(),
         answer: answerInput.value.trim(),
         task_type: taskTypeInput.value.trim(),
         task_domain: taskDomainInput.value.trim(),
-        num_instances: Number(numInstancesInput.value || 0),
+        num_instances: isHallucination ? 0 : state.masks.length,
         hallucination: Number(hallucinationInput.value || 0),
-        segmentation: rle,
-        bbox,
-        area,
+        annotations,
         image: {
           image_id: imageId,
           width: maskCanvas.width,
           height: maskCanvas.height,
           file_name: entry.image
-        },
-        annotation_id: annotationId
+        }
       };
       setMetaStatus("Metadata saved in browser session.");
-    }
-
-    function downloadMetadata() {
-      const payload = buildMetadataPayload();
-      if (!payload) return;
-      const blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const base = payload.image.replace(/\.[^.]+$/, "");
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `${base}_meta.json`;
-      link.click();
-      URL.revokeObjectURL(url);
-      setMetaStatus("Metadata downloaded.");
     }
 
     function buildSummaryPayload() {
@@ -1165,14 +1530,7 @@
           task_domain: stored.task_domain,
           num_instances: stored.num_instances,
           hallucination: stored.hallucination,
-          annotations: [
-            {
-              id: stored.annotation_id,
-              segmentation: stored.segmentation,
-              bbox: stored.bbox,
-              area: stored.area
-            }
-          ]
+          annotations: stored.annotations || []
         });
       });
       return records;
@@ -1190,8 +1548,148 @@
       setMetaStatus("Summary downloaded.");
     }
 
+    function maskToDataUrl(canvas) {
+      return canvas.toDataURL("image/png");
+    }
+
+    function buildCurrentSummaryEntry() {
+      const entry = state.entries[state.currentIndex];
+      if (!entry) return null;
+      const stored = state.metadata[entry.image];
+      if (!stored) return null;
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
+      return {
+        image: stored.image,
+        question: stored.question,
+        answer: stored.answer,
+        task_type: stored.task_type,
+        task_domain: stored.task_domain,
+        num_instances: stored.num_instances,
+        hallucination: stored.hallucination,
+        annotations: stored.annotations || []
+      };
+    }
+
+    async function saveQAPair() {
+      const entry = state.entries[state.currentIndex];
+      if (!entry?.abs_path) {
+        setMetaStatus("No nuImages item selected.", true);
+        return;
+      }
+      saveMetadata();
+      const summaryEntry = buildCurrentSummaryEntry();
+      if (!summaryEntry) {
+        setMetaStatus("No QA data to save.", true);
+        return;
+      }
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
+      const masksPayload = isHallucination
+        ? []
+        : state.masks.map((maskEntry) => ({
+            label: maskEntry.label || "unlabeled",
+            data: maskToDataUrl(maskEntry.canvas),
+            rle: encodeRleFromMask(maskEntry.canvas, maskEntry.ctx)
+          }));
+      const payload = {
+        file_name: entry.abs_path,
+        status: "labeled",
+        masks: masksPayload,
+        width: maskCanvas.width,
+        height: maskCanvas.height,
+        summary_entry: summaryEntry
+      };
+
+      try {
+        const response = await fetch(`${state.sam.endpoint}/progress/commit`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) {
+          const detail = await response.text();
+          throw new Error(detail || `HTTP ${response.status}`);
+        }
+        setMetaStatus("QA pair saved.");
+        setProgressStatus("Progress: labeled.");
+        refreshProgressSummary();
+        if (Number(hallucinationInput.value || 0) === 1) {
+          state.masks = [];
+          state.activeMaskId = null;
+        } else {
+          state.masks = [];
+          const newMask = createMaskEntry("");
+          state.masks.push(newMask);
+          setActiveMask(newMask.id);
+        }
+        updateMaskList();
+        updateStats();
+        render();
+      } catch (error) {
+        setMetaStatus(`QA save failed: ${error.message}`, true);
+      }
+    }
+
+    async function commitProgress(status) {
+      const entry = state.entries[state.currentIndex];
+      if (!entry?.abs_path) {
+        setProgressStatus("No nuImages item selected.", true);
+        return;
+      }
+
+      if (status === "labeled") {
+        saveMetadata();
+      }
+
+      const summaryEntry = buildCurrentSummaryEntry();
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
+      const masksPayload = isHallucination
+        ? []
+        : state.masks.map((maskEntry) => ({
+            label: maskEntry.label || "unlabeled",
+            data: maskToDataUrl(maskEntry.canvas),
+            rle: encodeRleFromMask(maskEntry.canvas, maskEntry.ctx)
+          }));
+      const payload = {
+        file_name: entry.abs_path,
+        status,
+        masks: status === "labeled" ? masksPayload : [],
+        width: maskCanvas.width,
+        height: maskCanvas.height,
+        summary_entry: summaryEntry
+      };
+
+      try {
+        const response = await fetch(`${state.sam.endpoint}/progress/commit`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+        if (!response.ok) {
+          const detail = await response.text();
+          throw new Error(detail || `HTTP ${response.status}`);
+        }
+        const result = await response.json();
+        setProgressStatus(`Progress: ${status}. Saved to ${result.image_path}.`);
+        refreshProgressSummary();
+        state.entries.splice(state.currentIndex, 1);
+        rebuildImageList();
+        if (state.entries.length > 0) {
+          const nextIndex = Math.min(state.currentIndex, state.entries.length - 1);
+          selectEntry(nextIndex);
+        } else {
+          state.currentIndex = -1;
+          state.imageElement = null;
+          render();
+          setNuImagesStatus("No remaining items.");
+        }
+      } catch (error) {
+        setProgressStatus(`Progress commit failed: ${error.message}`, true);
+      }
+    }
+
     function beginStroke(event) {
       if (!state.imageElement) return;
+      if (!state.activeMaskId) return;
       event.preventDefault();
       if (state.tool === "sam") {
         const point = getCanvasPoint(event);
@@ -1268,6 +1766,52 @@
       loadMask(entry);
     });
 
+    addMaskBtn.addEventListener("click", () => {
+      const newMask = createMaskEntry("");
+      newMask.canvas.width = maskCanvas.width || 1;
+      newMask.canvas.height = maskCanvas.height || 1;
+      newMask.ctx = newMask.canvas.getContext("2d", { willReadFrequently: true });
+      state.masks.push(newMask);
+      setActiveMask(newMask.id);
+      updateMaskList();
+      setMetaStatus("New mask created.");
+    });
+
+    removeMaskBtn.addEventListener("click", () => {
+      const isHallucination = Number(hallucinationInput.value || 0) === 1;
+      if (!isHallucination && state.masks.length <= 1) return;
+      if (state.masks.length === 0) return;
+      const idx = state.masks.findIndex((item) => item.id === state.activeMaskId);
+      if (idx >= 0) state.masks.splice(idx, 1);
+      if (state.masks.length > 0) {
+        const next = state.masks[Math.max(0, idx - 1)];
+        setActiveMask(next.id);
+      } else {
+        state.activeMaskId = null;
+        maskCanvas = document.createElement("canvas");
+        maskCanvas.width = viewCanvas.width || 1;
+        maskCanvas.height = viewCanvas.height || 1;
+        maskCtx = maskCanvas.getContext("2d", { willReadFrequently: true });
+        updateMaskList();
+        updateStats();
+        render();
+      }
+      updateMaskList();
+      setMetaStatus("Mask removed.");
+    });
+
+    maskLabelInput.addEventListener("input", () => {
+      const active = state.masks.find((item) => item.id === state.activeMaskId);
+      if (!active) return;
+      active.label = maskLabelInput.value.trim();
+      updateMaskList();
+    });
+
+    hallucinationInput.addEventListener("change", () => {
+      ensureMaskState();
+      updateNumInstances();
+    });
+
     toggleMaskBtn.addEventListener("click", () => {
       state.showMask = !state.showMask;
       toggleMaskBtn.classList.toggle("active", state.showMask);
@@ -1276,6 +1820,7 @@
     });
 
     downloadBtn.addEventListener("click", downloadMask);
+    downloadAllMasksBtn.addEventListener("click", downloadAllMasks);
     downloadRleBtn.addEventListener("click", downloadRle);
     runSamBtn.addEventListener("click", runSam);
     applySamBtn.addEventListener("click", applySamCandidate);
@@ -1284,9 +1829,9 @@
       setSamStatus("SAM prompts cleared.");
     });
     retrySamStatusBtn.addEventListener("click", checkSamService);
-    saveMetaBtn.addEventListener("click", saveMetadata);
-    downloadMetaBtn.addEventListener("click", downloadMetadata);
+    saveMetaBtn.addEventListener("click", saveQAPair);
     downloadSummaryBtn.addEventListener("click", downloadSummary);
+    skipImageBtn.addEventListener("click", () => commitProgress("skipped"));
 
     brushSizeInput.addEventListener("input", () => {
       state.brushSize = Number(brushSizeInput.value);
@@ -1299,9 +1844,7 @@
       render();
     });
 
-    fileInput.addEventListener("change", (event) => {
-      if (event.target.files?.length) handleFiles(event.target.files);
-    });
+    loadNuImagesBtn.addEventListener("click", loadNuImages);
 
     viewCanvas.addEventListener("pointerdown", beginStroke);
     viewCanvas.addEventListener("pointermove", moveStroke);
@@ -1333,11 +1876,17 @@
     });
 
     state.entries = builtInEntries;
+    if (state.masks.length === 0) {
+      const initialMask = createMaskEntry("");
+      state.masks.push(initialMask);
+      setActiveMask(initialMask.id);
+    }
     rebuildImageList();
     render();
     syncUndoButtons();
     updateSamPointStats();
     checkSamService();
+    refreshProgressSummary();
     selectEntry(0);
   </script>
 </body>
