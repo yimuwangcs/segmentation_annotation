@@ -1,0 +1,44 @@
+{
+  "image": {
+    "image_id": 8,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005106614720.jpg"
+  },
+  "question": "How many distinct text-bearing marked surfaces are clearly visible on the truck, excluding the partially hidden building signs?",
+  "answer": "At least 5 text-bearing marked surfaces are clearly visible: the \u201cSTOP\u201d sign, the \u201cBOS:311\u201d panel, the \u201cBACKRACK\u201d text, the \u201cR-15\u201d marking, and the city logo/text on the door.",
+  "task_type": "Countering/Ordering",
+  "task_domain": "nuscenes",
+  "num_instances": 1,
+  "hallucination": 0,
+  "annotations": [
+    {
+      "id": 8001,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          1440000
+        ]
+      },
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "area": 0,
+      "label": ""
+    }
+  ],
+  "qa_index": 128,
+  "mask_paths": [
+    "masks/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005106614720_128_mask_unlabeled_1.png"
+  ],
+  "rle_paths": [
+    "rle/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005106614720_128_mask_unlabeled_1.json"
+  ],
+  "json_path": "json/CAM_FRONT_LEFT__n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005106614720.jpg_Countering_Ordering_128_0.json"
+}

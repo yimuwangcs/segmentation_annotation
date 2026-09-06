@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 8,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520006130652568.jpg"
+  },
+  "question": "How many red cars are driving?",
+  "answer": "0 driving red cars.",
+  "task_type": "Countering/Ordering",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 134,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_LEFT__n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520006130652568.jpg_Countering_Ordering_134_1.json"
+}

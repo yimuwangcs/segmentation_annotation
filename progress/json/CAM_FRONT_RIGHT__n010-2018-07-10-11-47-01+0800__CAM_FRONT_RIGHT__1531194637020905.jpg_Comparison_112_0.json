@@ -1,0 +1,44 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-10-11-47-01+0800__CAM_FRONT_RIGHT__1531194637020905.jpg"
+  },
+  "question": "Between the nearer sedan and the gray SUV, which one carries more readable promotional text?",
+  "answer": "The nearer blue-and-white sedan carries more readable promotional text, with multiple slogans and brand markings visible, while the gray SUV has little or no readable advertising text.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 1,
+  "hallucination": 0,
+  "annotations": [
+    {
+      "id": 10001,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          1440000
+        ]
+      },
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "area": 0,
+      "label": ""
+    }
+  ],
+  "qa_index": 112,
+  "mask_paths": [
+    "masks/n010-2018-07-10-11-47-01+0800__CAM_FRONT_RIGHT__1531194637020905_112_mask_unlabeled_1.png"
+  ],
+  "rle_paths": [
+    "rle/n010-2018-07-10-11-47-01+0800__CAM_FRONT_RIGHT__1531194637020905_112_mask_unlabeled_1.json"
+  ],
+  "json_path": "json/CAM_FRONT_RIGHT__n010-2018-07-10-11-47-01+0800__CAM_FRONT_RIGHT__1531194637020905.jpg_Comparison_112_0.json"
+}

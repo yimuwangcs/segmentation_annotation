@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-10-10-50-47+0800__CAM_FRONT_RIGHT__1531191451370905.jpg"
+  },
+  "question": "Is the black car driving in the same direction with the ego vehicle?",
+  "answer": "There does not exist black car in this image.",
+  "task_type": "Spatial Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 93,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n010-2018-07-10-10-50-47+0800__CAM_FRONT_RIGHT__1531191451370905.jpg_Spatial_Comparison_93_1.json"
+}

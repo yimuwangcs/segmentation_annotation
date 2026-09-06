@@ -1,0 +1,100 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605788012488.jpg"
+  },
+  "question": "Near the left side of the intersection, what human-powered road user can be identified beside the small truck?",
+  "answer": "A person on a scooter.",
+  "task_type": "Identification",
+  "task_domain": "nuscenes",
+  "num_instances": 1,
+  "hallucination": 0,
+  "annotations": [
+    {
+      "id": 10001,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          173264,
+          5,
+          877,
+          4,
+          8,
+          15,
+          872,
+          31,
+          7,
+          2,
+          858,
+          46,
+          853,
+          57,
+          843,
+          61,
+          840,
+          63,
+          837,
+          66,
+          835,
+          75,
+          826,
+          75,
+          826,
+          75,
+          825,
+          75,
+          826,
+          74,
+          827,
+          73,
+          828,
+          72,
+          829,
+          71,
+          830,
+          70,
+          832,
+          67,
+          834,
+          65,
+          836,
+          43,
+          15,
+          4,
+          839,
+          35,
+          867,
+          17,
+          885,
+          11,
+          892,
+          6,
+          896,
+          2,
+          1245133
+        ]
+      },
+      "bbox": [
+        192,
+        442,
+        25,
+        79
+      ],
+      "area": 1260,
+      "label": "person on a scooter"
+    }
+  ],
+  "qa_index": 171,
+  "mask_paths": [
+    "masks/n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605788012488_171_mask_person_on_a_scooter_1.png"
+  ],
+  "rle_paths": [
+    "rle/n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605788012488_171_mask_person_on_a_scooter_1.json"
+  ],
+  "json_path": "json/CAM_FRONT__n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605788012488.jpg_Identification_171_0.json"
+}

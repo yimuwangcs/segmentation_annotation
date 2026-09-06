@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846635162488.jpg"
+  },
+  "question": "Comparing the cyclist in the right lane and the pedestrian near the parked cars, who is closer to the center arrow marking?",
+  "answer": "There is no clearly visible cyclist in the right lane in the image, so this comparison cannot be reliably determined.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 202,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846635162488.jpg_Comparison_202_1.json"
+}

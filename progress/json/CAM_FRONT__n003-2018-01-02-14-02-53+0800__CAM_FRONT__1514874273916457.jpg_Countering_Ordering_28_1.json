@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-02-14-02-53+0800__CAM_FRONT__1514874273916457.jpg"
+  },
+  "question": "How many motor vehicles are clearly visible in the image, and where are they located?",
+  "answer": "There does not exist any moto vehicle.",
+  "task_type": "Countering/Ordering",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 28,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n003-2018-01-02-14-02-53+0800__CAM_FRONT__1514874273916457.jpg_Countering_Ordering_28_1.json"
+}

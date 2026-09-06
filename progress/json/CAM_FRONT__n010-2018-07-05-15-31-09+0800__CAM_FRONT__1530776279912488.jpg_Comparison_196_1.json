@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-05-15-31-09+0800__CAM_FRONT__1530776279912488.jpg"
+  },
+  "question": "Comparing the red bus and the silver sedan, which vehicle is longer?",
+  "answer": "There is no red bus visible in the image, so this comparison cannot be made.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 196,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-05-15-31-09+0800__CAM_FRONT__1530776279912488.jpg_Comparison_196_1.json"
+}

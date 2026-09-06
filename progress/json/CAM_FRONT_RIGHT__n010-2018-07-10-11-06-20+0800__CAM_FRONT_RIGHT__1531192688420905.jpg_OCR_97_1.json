@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-10-11-06-20+0800__CAM_FRONT_RIGHT__1531192688420905.jpg"
+  },
+  "question": "What company or route number is written on the front display of the blue bus?",
+  "answer": "It cannot be read reliably from the image because the bus display/details are too distant and unclear.",
+  "task_type": "OCR",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 97,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n010-2018-07-10-11-06-20+0800__CAM_FRONT_RIGHT__1531192688420905.jpg_OCR_97_1.json"
+}

@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598394862488.jpg"
+  },
+  "question": "If the yellow taxi continues forward following the lane it is currently in, will it pass to the left or to the right of the roadside sign that says \u201cSLOW\u201d?",
+  "answer": "Either. It has already passed the sign.",
+  "task_type": "Spatial Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 147,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598394862488.jpg_Spatial_Comparison_147_1.json"
+}

@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952742125370.jpg"
+  },
+  "question": "What is the name of the person standing on the left?",
+  "answer": "The person\u2019s identity cannot be determined from the image.",
+  "task_type": "Attribute",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 43,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952742125370.jpg_Attribute_43_1.json"
+}

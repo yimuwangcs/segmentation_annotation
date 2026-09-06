@@ -1,0 +1,816 @@
+{
+  "entries": {
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514864956220368.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T06:36:35.451001Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514864966220822.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T06:43:25.195989Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865125726594.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T06:46:48.234875Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865097475591.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T06:52:06.433758Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865087475173.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T06:55:10.740129Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865170978337.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T06:58:12.149368Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865178561916.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:01:34.463750Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865269315205.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:04:42.062209Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865289649302.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:07:56.031241Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865329650781.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:10:12.276889Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865380485967.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:12:01.465771Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865400903398.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:14:22.809139Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865581576674.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:17:09.481562Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865773250229.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:18:37.686434Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865796668176.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:19:54.205905Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865827085554.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:21:40.024982Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865888587785.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:24:17.543623Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865898671455.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:25:54.535119Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865947423240.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:28:46.805660Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514866000425148.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T07:30:22.211358Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865502073767.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T08:31:40.632538Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865868420407.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T08:35:49.283866Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514866143180297.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T08:40:05.127446Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514866225349856.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T08:41:40.497209Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514866507443318.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T08:43:28.569510Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-14-02-53+0800__CAM_FRONT__1514873890490325.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T08:46:24.052498Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-14-02-53+0800__CAM_FRONT__1514874273916457.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T08:48:38.244334Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-14-02-53+0800__CAM_FRONT__1514874369086565.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T08:51:50.737061Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-02-14-36-45+0800__CAM_FRONT__1514875430624964.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:06:11.882412Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-10-58-34+0800__CAM_FRONT__1514948358814655.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:08:14.137775Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-10-58-34+0800__CAM_FRONT__1514948553247358.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:10:29.464836Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952246276068.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:12:48.413498Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952296944381.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:14:19.472998Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952337029570.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:16:06.209813Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952387447337.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:17:42.717439Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952458699671.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:18:57.735919Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952537035465.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:20:31.870115Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952571453237.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:21:43.844734Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952651705814.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:23:38.639430Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952701874063.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:25:50.691703Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952717041563.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:27:25.705614Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952742125370.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:29:42.767661Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:38:44.152057Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952933631431.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:40:58.962870Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n003-2018-01-03-14-16-47+0800__CAM_FRONT__1514960283135530.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:43:55.339307Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552736520471.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:48:29.087746Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552664620471.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:50:16.983570Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552635270471.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:52:48.214146Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552347020471.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:54:22.029401Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552334920471.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:57:00.916524Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n016-2018-09-10-11-49-13+0800__CAM_FRONT_RIGHT__1536551902620471.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T09:59:44.265206Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n013-2018-08-21-16-41-55+0800__CAM_FRONT__1534841288612407.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:04:36.508452Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-11-35-39+0800__CAM_FRONT_LEFT__1534736719004825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:09:26.916059Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-11-35-39+0800__CAM_FRONT_LEFT__1534736753004825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:11:54.144152Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-11-35-39+0800__CAM_FRONT_LEFT__1534736846604825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:15:06.075182Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-14-28-10+0800__CAM_FRONT_LEFT__1534746958254825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:17:58.393616Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-14-38-24+0800__CAM_FRONT_LEFT__1534747393004825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:21:08.264521Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-14-38-24+0800__CAM_FRONT_LEFT__1534747526004825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:23:48.254605Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-14-38-24+0800__CAM_FRONT_LEFT__1534747600004825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:25:49.403823Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-14-38-24+0800__CAM_FRONT_LEFT__1534747822004825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:27:23.908865Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-14-38-24+0800__CAM_FRONT_LEFT__1534747838154825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:28:45.480136Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-14-38-24+0800__CAM_FRONT_LEFT__1534747859604825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:31:14.468555Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-14-38-24+0800__CAM_FRONT_LEFT__1534747867154825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:39:59.154777Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-15-15-12+0800__CAM_FRONT_LEFT__1534749386404825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:42:22.808294Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-15-15-12+0800__CAM_FRONT_LEFT__1534749524754825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:44:25.630496Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-15-15-12+0800__CAM_FRONT_LEFT__1534749552354825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:46:07.574931Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n013-2018-08-20-15-15-12+0800__CAM_FRONT_LEFT__1534749629154825.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:47:45.457590Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-15-52-17+0800__CAM_FRONT_RIGHT__1531122755020905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:52:21.060335Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-15-52-17+0800__CAM_FRONT_RIGHT__1531122783770905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:53:35.323338Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-15-52-17+0800__CAM_FRONT_RIGHT__1531122971620905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:55:14.311137Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-15-52-17+0800__CAM_FRONT_RIGHT__1531123083420905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:56:35.850018Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-15-52-17+0800__CAM_FRONT_RIGHT__1531123139270905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T10:58:26.643801Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-15-52-17+0800__CAM_FRONT_RIGHT__1531123153770905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:00:14.558085Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-16-07-20+0800__CAM_FRONT_RIGHT__1531124176770905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:01:50.916813Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-16-07-20+0800__CAM_FRONT_RIGHT__1531124184870905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:03:45.913041Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-16-22-11+0800__CAM_FRONT_RIGHT__1531124773120905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:04:40.896764Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-09-16-22-11+0800__CAM_FRONT_RIGHT__1531125033770905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:06:37.046583Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531189497920905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:08:08.351437Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531189597520905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:09:57.724450Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531189604620905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:11:46.592982Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531189638170943.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:13:15.273139Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531190016423333.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:14:52.041955Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531190117170905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:15:52.554545Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531190130770905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:16:36.336261Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531190212020905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:17:07.183551Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-24-36+0800__CAM_FRONT_RIGHT__1531190217520905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:20:32.935237Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-37-43+0800__CAM_FRONT_RIGHT__1531190401920905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:22:27.803267Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-37-43+0800__CAM_FRONT_RIGHT__1531190698370905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:23:37.181965Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-50-47+0800__CAM_FRONT_RIGHT__1531191346420905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:25:43.453661Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-50-47+0800__CAM_FRONT_RIGHT__1531191386520930.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:27:26.670261Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-50-47+0800__CAM_FRONT_RIGHT__1531191389120905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:28:41.264119Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-10-50-47+0800__CAM_FRONT_RIGHT__1531191451370905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:29:19.171413Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-06-20+0800__CAM_FRONT_RIGHT__1531192379620905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:32:04.846985Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-06-20+0800__CAM_FRONT_RIGHT__1531192631620905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:34:27.789662Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-06-20+0800__CAM_FRONT_RIGHT__1531192644420905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:36:22.620003Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-06-20+0800__CAM_FRONT_RIGHT__1531192688420905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:38:06.300583Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531193559670905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:38:51.922840Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531193578670905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:40:17.386867Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531193793370905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:41:34.700866Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531193819770905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:43:49.337277Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531193835170905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:45:27.287985Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531193905270905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:46:05.161312Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531193983870905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:48:43.059542Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531194240770905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:49:36.801858Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531194318020905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:50:02.162906Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531194321870905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:51:28.159137Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531194339870905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:52:36.506237Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-31-26+0800__CAM_FRONT_RIGHT__1531194348520905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:53:59.131592Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-47-01+0800__CAM_FRONT_RIGHT__1531194471520905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:55:19.655801Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-10-11-47-01+0800__CAM_FRONT_RIGHT__1531194637020905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:57:13.173838Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-20-14-38-44+0800__CAM_FRONT_RIGHT__1532068846370905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T11:59:49.952130Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-20-14-38-44+0800__CAM_FRONT_RIGHT__1532068944420905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T12:00:36.967374Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-20-14-38-44+0800__CAM_FRONT_RIGHT__1532068999920905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:20:41.664301Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-20-14-38-44+0800__CAM_FRONT_RIGHT__1532069040770905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:21:52.255751Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-20-14-38-44+0800__CAM_FRONT_RIGHT__1532069047920905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:23:22.521345Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-23-11-50-54+0800__CAM_FRONT_RIGHT__1532317867020905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:24:38.643325Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-07-23-11-50-54+0800__CAM_FRONT_RIGHT__1532318340270905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:27:14.766142Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_RIGHT/n010-2018-08-03-16-43-05+0800__CAM_FRONT_RIGHT__1533286096870905.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:28:04.016168Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n006-2018-09-17-13-56-03-0400__CAM_FRONT_LEFT__1537207616154671.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:30:22.290993Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n006-2018-09-17-14-44-43-0400__CAM_FRONT_LEFT__1537210709004671.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:32:31.663018Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n006-2018-09-17-14-44-43-0400__CAM_FRONT_LEFT__1537210826504671.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:33:56.050213Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005024361595.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:36:09.268548Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005106614720.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:41:02.029190Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005258786993.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:44:29.741916Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005635884303.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:46:16.419066Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520005974313472.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:48:56.487185Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520006089067723.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:50:06.515650Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520006120068833.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:51:34.897147Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520006130652568.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:52:14.851488Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-14-14-56-49-0400__CAM_FRONT_LEFT__1521053934922289.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:53:19.738364Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n008-2018-03-14-14-56-49-0400__CAM_FRONT_LEFT__1521054163514117.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:56:09.723743Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n010-2018-07-03-11-06-43+0800__CAM_FRONT_LEFT__1530587540754509.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T14:59:05.729584Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n010-2018-07-03-11-06-43+0800__CAM_FRONT_LEFT__1530587816604509.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:00:44.549469Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n010-2018-07-03-11-33-33+0800__CAM_FRONT_LEFT__1530588870104509.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:02:14.198615Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n010-2018-07-03-11-33-33+0800__CAM_FRONT_LEFT__1530589032504509.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:04:41.229231Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n010-2018-07-03-11-33-33+0800__CAM_FRONT_LEFT__1530589354854509.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:06:09.418915Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n010-2018-07-03-11-33-33+0800__CAM_FRONT_LEFT__1530589437154509.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:07:54.294005Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n010-2018-07-03-11-33-33+0800__CAM_FRONT_LEFT__1530589530004509.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:10:03.004084Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT_LEFT/n010-2018-07-03-14-05-21+0800__CAM_FRONT_LEFT__1530598121904509.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:11:56.810867Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598313012488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:16:32.649070Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598394862488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:17:51.653819Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598424862488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:21:07.061388Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598466612488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:22:20.153309Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598470612488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:23:43.914524Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598475112488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:26:21.604805Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-28-18+0800__CAM_FRONT__1530599812512488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:28:09.013586Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-28-18+0800__CAM_FRONT__1530599865512488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:29:35.535316Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-28-18+0800__CAM_FRONT__1530599977662488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:31:12.895287Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-28-18+0800__CAM_FRONT__1530599981262488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:33:51.030011Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-40-41+0800__CAM_FRONT__1530600089362488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:34:52.379776Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-40-41+0800__CAM_FRONT__1530600126612488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:36:25.681078Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530600912012488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:38:13.045606Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530600953262488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:40:04.669035Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530601017912488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:43:31.564907Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530601022862488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:44:47.601979Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530601057012488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:46:14.434918Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530601199362488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:47:33.064851Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530601242862488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:48:55.068083Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530601276162488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:50:23.428013Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-15-04-38+0800__CAM_FRONT__1530601582162488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:52:07.893180Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605214412488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:55:00.897070Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605436912488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:58:12.427774Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605573362488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T15:59:50.723382Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605576012488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:01:37.025913Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605788012488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:03:34.828979Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605793362488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:04:11.138318Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-02-36+0800__CAM_FRONT__1530770562662488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:07:06.553380Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-02-36+0800__CAM_FRONT__1530770616412488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:09:03.366001Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-02-36+0800__CAM_FRONT__1530770648112488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:10:13.816563Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530770948862488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:11:51.683874Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530770973162488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:13:08.703587Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530771000162488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:14:18.878944Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530771015112488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:16:30.331221Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530771021262488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:18:20.552353Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530771025912488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:19:49.966251Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530771127912488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:21:16.382199Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530771213512488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:22:27.769990Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530771530262488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:23:44.649933Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-21-00+0800__CAM_FRONT__1530771791762488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:25:52.199210Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-21-00+0800__CAM_FRONT__1530771885762488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:27:11.784005Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-21-00+0800__CAM_FRONT__1530771891612488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:28:22.323542Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-21-00+0800__CAM_FRONT__1530771928912488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:29:33.845429Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-14-36-33+0800__CAM_FRONT__1530773137512488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:32:41.328783Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-15-05-52+0800__CAM_FRONT__1530774576862488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:33:47.386993Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-15-05-52+0800__CAM_FRONT__1530774827512488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:35:37.643284Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-15-05-52+0800__CAM_FRONT__1530774872262488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:37:25.628115Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-15-05-52+0800__CAM_FRONT__1530774894612488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:39:07.549039Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-15-05-52+0800__CAM_FRONT__1530774918862488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:40:10.583176Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-15-20-58+0800__CAM_FRONT__1530775392512488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:42:33.016776Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-15-31-09+0800__CAM_FRONT__1530776279912488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:44:37.303910Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-05-16-30-07+0800__CAM_FRONT__1530779776662488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:46:31.861419Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846115162488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:48:58.587398Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846136912488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:50:18.445978Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846297612488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:51:19.666569Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846444412488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:53:10.804028Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846635162488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:54:24.251520Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846679262488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:55:21.187233Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-06-11-01-46+0800__CAM_FRONT__1530846885762488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:56:30.766425Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-09-11-56-37+0800__CAM_FRONT__1531108856362488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:58:35.277719Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n010-2018-07-09-11-56-37+0800__CAM_FRONT__1531109541762488.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T16:59:59.756113Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n013-2018-07-31-15-47-38+0800__CAM_FRONT__1533023556012407.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T17:02:54.726369Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n013-2018-07-31-15-47-38+0800__CAM_FRONT__1533023574362407.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T17:05:00.329717Z"
+    },
+    "/Users/yimuwang/Downloads/nuimages-v1.0-all-metadata-samples/samples/CAM_FRONT/n013-2018-07-31-15-47-38+0800__CAM_FRONT__1533023612612407.jpg": {
+      "status": "labeled",
+      "updated_at": "2026-04-06T17:06:02.251091Z"
+    }
+  }
+}

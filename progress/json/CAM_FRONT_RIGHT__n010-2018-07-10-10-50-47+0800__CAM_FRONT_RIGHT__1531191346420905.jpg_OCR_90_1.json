@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-10-10-50-47+0800__CAM_FRONT_RIGHT__1531191346420905.jpg"
+  },
+  "question": "What is the motorcycle\u2019s license plate number?",
+  "answer": "The license plate number cannot be determined confidently from this image due to insufficient clarity and distance.",
+  "task_type": "OCR",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 90,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n010-2018-07-10-10-50-47+0800__CAM_FRONT_RIGHT__1531191346420905.jpg_OCR_90_1.json"
+}

@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-09-11-56-37+0800__CAM_FRONT__1531108856362488.jpg"
+  },
+  "question": "Which bicycle is closer to the red SUV, the one beside the left building or the one parked near the right signboard?",
+  "answer": "No bicycles are clearly visible in the scene, so the question refers to nonexistent objects.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 205,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-09-11-56-37+0800__CAM_FRONT__1531108856362488.jpg_Comparison_205_1.json"
+}

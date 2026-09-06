@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530600912012488.jpg"
+  },
+  "question": "Is the cyclist riding between the Porsche and the pedestrian moving toward or away from the camera?",
+  "answer": "",
+  "task_type": "Spatial Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 158,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530600912012488.jpg_Spatial_Comparison_158_1.json"
+}

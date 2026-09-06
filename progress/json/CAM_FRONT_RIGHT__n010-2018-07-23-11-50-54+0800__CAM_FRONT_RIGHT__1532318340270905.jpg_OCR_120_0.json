@@ -1,0 +1,44 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-23-11-50-54+0800__CAM_FRONT_RIGHT__1532318340270905.jpg"
+  },
+  "question": "What is the phone number of the Alpheus company?",
+  "answer": "As shown on the side of the white truck, it is 6257 8257.",
+  "task_type": "OCR",
+  "task_domain": "nuscenes",
+  "num_instances": 1,
+  "hallucination": 0,
+  "annotations": [
+    {
+      "id": 10001,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          1440000
+        ]
+      },
+      "bbox": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "area": 0,
+      "label": ""
+    }
+  ],
+  "qa_index": 120,
+  "mask_paths": [
+    "masks/n010-2018-07-23-11-50-54+0800__CAM_FRONT_RIGHT__1532318340270905_120_mask_unlabeled_1.png"
+  ],
+  "rle_paths": [
+    "rle/n010-2018-07-23-11-50-54+0800__CAM_FRONT_RIGHT__1532318340270905_120_mask_unlabeled_1.json"
+  ],
+  "json_path": "json/CAM_FRONT_RIGHT__n010-2018-07-23-11-50-54+0800__CAM_FRONT_RIGHT__1532318340270905.jpg_OCR_120_0.json"
+}

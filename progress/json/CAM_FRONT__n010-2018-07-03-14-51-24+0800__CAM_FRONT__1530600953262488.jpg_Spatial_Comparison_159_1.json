@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530600953262488.jpg"
+  },
+  "question": "Is the cyclist riding across the median heading toward the camera or away from it?",
+  "answer": "There is no clearly visible cyclist riding across the median in the image.",
+  "task_type": "Spatial Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 159,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-03-14-51-24+0800__CAM_FRONT__1530600953262488.jpg_Spatial_Comparison_159_1.json"
+}

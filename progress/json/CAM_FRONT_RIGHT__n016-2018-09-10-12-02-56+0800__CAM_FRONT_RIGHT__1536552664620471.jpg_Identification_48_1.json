@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 16,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552664620471.jpg"
+  },
+  "question": "What time is shown on the digital clock mounted on the building?",
+  "answer": "There is no visible digital clock in the image.",
+  "task_type": "Identification",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 48,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552664620471.jpg_Identification_48_1.json"
+}

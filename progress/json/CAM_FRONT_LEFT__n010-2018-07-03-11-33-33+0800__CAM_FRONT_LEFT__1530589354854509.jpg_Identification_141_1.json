@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-11-33-33+0800__CAM_FRONT_LEFT__1530589354854509.jpg"
+  },
+  "question": "What company name is written on the side of the excavator?",
+  "answer": "The company name cannot be determined clearly from this image because the visible text is too partial and blurry.",
+  "task_type": "Identification",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 141,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_LEFT__n010-2018-07-03-11-33-33+0800__CAM_FRONT_LEFT__1530589354854509.jpg_Identification_141_1.json"
+}

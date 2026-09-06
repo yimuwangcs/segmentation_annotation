@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514864956220368.jpg"
+  },
+  "question": "What is the full color scheme of the bicycle parked near the entrance of the dark central building?",
+  "answer": "There is no bicycle parked near the entrance of the dark central building.",
+  "task_type": "Attribute",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 1,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514864956220368.jpg_Attribute_1_1.json"
+}

@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598470612488.jpg"
+  },
+  "question": "Is there an open gap in the white wall on the right that leads directly into a parking lot?",
+  "answer": "No such opening is clearly visible, so this cannot be determined from the image.",
+  "task_type": "Spatial Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 150,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598470612488.jpg_Spatial_Comparison_150_1.json"
+}

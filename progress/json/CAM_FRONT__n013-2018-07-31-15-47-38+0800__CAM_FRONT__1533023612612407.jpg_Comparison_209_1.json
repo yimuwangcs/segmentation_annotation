@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 13,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n013-2018-07-31-15-47-38+0800__CAM_FRONT__1533023612612407.jpg"
+  },
+  "question": "Is the police officer speaking with the person on the phone about their broken-down bicycle?",
+  "answer": "There is no police officer visible in the image, and there is no indication that the bicycle is broken down or that the person on the phone is speaking about it. The person is simply standing and holding a phone.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 209,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n013-2018-07-31-15-47-38+0800__CAM_FRONT__1533023612612407.jpg_Comparison_209_1.json"
+}

@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952717041563.jpg"
+  },
+  "question": "What is the black sedan\u2019s license plate?",
+  "answer": "The license plate is not fully readable, but it appears to begin with \u201cSG\u201d or a similar combination on the rear plate.",
+  "task_type": "OCR",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 42,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952717041563.jpg_OCR_42_1.json"
+}

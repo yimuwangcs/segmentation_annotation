@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530770948862488.jpg"
+  },
+  "question": "What brand of scooter is the rider in the right foreground using?",
+  "answer": "No one is riding a scooter in this image.",
+  "task_type": "Identification",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 176,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-05-14-07-00+0800__CAM_FRONT__1530770948862488.jpg_Identification_176_1.json"
+}

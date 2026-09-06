@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598466612488.jpg"
+  },
+  "question": "Are any workers wearing reflective vests inside the construction site?",
+  "answer": "This cannot be confirmed from the image, because any people in the construction area are too small or indistinct to identify clearly.",
+  "task_type": "Spatial Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 149,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-03-14-05-21+0800__CAM_FRONT__1530598466612488.jpg_Spatial_Comparison_149_1.json"
+}

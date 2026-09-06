@@ -1,0 +1,76 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865178561916.jpg"
+  },
+  "question": "Can the full license plate of the red car ahead on the left lane be read with confidence?",
+  "answer": "No, it cannot be read with full confidence; only a partial or blurry plate is visible, insufficient for reliable exact transcription.",
+  "task_type": "Identification",
+  "task_domain": "nuscenes",
+  "num_instances": 1,
+  "hallucination": 0,
+  "annotations": [
+    {
+      "id": 3001,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          324593,
+          3,
+          897,
+          3,
+          897,
+          3,
+          344570,
+          4,
+          896,
+          5,
+          895,
+          5,
+          895,
+          5,
+          895,
+          5,
+          895,
+          5,
+          895,
+          5,
+          895,
+          5,
+          895,
+          6,
+          894,
+          6,
+          894,
+          6,
+          895,
+          1,
+          1,
+          3,
+          759128
+        ]
+      },
+      "bbox": [
+        360,
+        466,
+        397,
+        130
+      ],
+      "area": 70,
+      "label": "car plate"
+    }
+  ],
+  "qa_index": 8,
+  "mask_paths": [
+    "masks/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865178561916_8_mask_car_plate_1.png"
+  ],
+  "rle_paths": [
+    "rle/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865178561916_8_mask_car_plate_1.json"
+  ],
+  "json_path": "json/CAM_FRONT__n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865178561916.jpg_Identification_8_0.json"
+}

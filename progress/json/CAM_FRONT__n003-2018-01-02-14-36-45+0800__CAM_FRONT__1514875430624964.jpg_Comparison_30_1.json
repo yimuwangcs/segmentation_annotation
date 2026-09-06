@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-02-14-36-45+0800__CAM_FRONT__1514875430624964.jpg"
+  },
+  "question": "Which is closer to the camera, the cyclist behind the bus or the bus itself?",
+  "answer": "It cannot be determined because no cyclist is visible behind the bus.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 30,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n003-2018-01-02-14-36-45+0800__CAM_FRONT__1514875430624964.jpg_Comparison_30_1.json"
+}

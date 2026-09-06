@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-09-11-56-37+0800__CAM_FRONT__1531109541762488.jpg"
+  },
+  "question": "Which is taller, the traffic light hanging above the road or the height-limit sign on the overhead structure?",
+  "answer": "There is no visible traffic light in the image, so the comparison is invalid.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 206,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-09-11-56-37+0800__CAM_FRONT__1531109541762488.jpg_Comparison_206_1.json"
+}

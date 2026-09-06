@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 13,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n013-2018-08-20-15-15-12+0800__CAM_FRONT_LEFT__1534749524754825.jpg"
+  },
+  "question": "Is the driver of the three-wheeled vehicle wearing a helmet?",
+  "answer": "The three-wheeled vehicle does not have a driver.",
+  "task_type": "Attribute",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 66,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_LEFT__n013-2018-08-20-15-15-12+0800__CAM_FRONT_LEFT__1534749524754825.jpg_Attribute_66_1.json"
+}

@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-10-11-47-01+0800__CAM_FRONT_RIGHT__1531194471520905.jpg"
+  },
+  "question": "What route number is displayed on the bus stop sign?",
+  "answer": "It cannot be determined, because no route number is clearly visible in the image.",
+  "task_type": "OCR",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 110,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n010-2018-07-10-11-47-01+0800__CAM_FRONT_RIGHT__1531194471520905.jpg_OCR_110_1.json"
+}

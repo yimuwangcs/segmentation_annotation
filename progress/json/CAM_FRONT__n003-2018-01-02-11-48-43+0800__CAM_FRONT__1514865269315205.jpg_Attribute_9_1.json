@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865269315205.jpg"
+  },
+  "question": "What is the make and model of the distant blue car?",
+  "answer": "There does not exist a blue car in distant.",
+  "task_type": "Attribute",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 9,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865269315205.jpg_Attribute_9_1.json"
+}

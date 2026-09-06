@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 8,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n008-2018-03-14-14-56-49-0400__CAM_FRONT_LEFT__1521053934922289.jpg"
+  },
+  "question": "What is the driving behaviour of the yellow car?",
+  "answer": "Not answerable.",
+  "task_type": "Attribute",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 135,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_LEFT__n008-2018-03-14-14-56-49-0400__CAM_FRONT_LEFT__1521053934922289.jpg_Attribute_135_1.json"
+}

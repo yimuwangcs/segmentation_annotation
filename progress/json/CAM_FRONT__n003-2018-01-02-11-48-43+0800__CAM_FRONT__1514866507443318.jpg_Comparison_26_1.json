@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514866507443318.jpg"
+  },
+  "question": "Which is taller, the security guard standing by the gatehouse or the person near the parking sign?",
+  "answer": "It cannot be determined because no clearly visible security guard or person is present in those locations.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 26,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514866507443318.jpg_Comparison_26_1.json"
+}

@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 8,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520006120068833.jpg"
+  },
+  "question": "How many people are walking between the parked cars?",
+  "answer": "0 visible people. No clearly identifiable pedestrians are visible between the cars.",
+  "task_type": "Countering/Ordering",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 133,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_LEFT__n008-2018-03-02-10-34-21-0500__CAM_FRONT_LEFT__1520006120068833.jpg_Countering_Ordering_133_1.json"
+}

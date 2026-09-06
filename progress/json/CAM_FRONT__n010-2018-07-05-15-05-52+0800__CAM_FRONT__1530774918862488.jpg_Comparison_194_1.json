@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-05-15-05-52+0800__CAM_FRONT__1530774918862488.jpg"
+  },
+  "question": "Comparing the cyclist and the pedestrian, who is closer to the white container?",
+  "answer": "There is no clearly visible cyclist or pedestrian near the white container, so this comparison cannot be made.",
+  "task_type": "Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 194,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-05-15-05-52+0800__CAM_FRONT__1530774918862488.jpg_Comparison_194_1.json"
+}

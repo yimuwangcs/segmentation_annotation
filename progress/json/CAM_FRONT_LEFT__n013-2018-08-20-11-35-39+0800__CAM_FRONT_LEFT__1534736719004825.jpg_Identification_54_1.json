@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 13,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n013-2018-08-20-11-35-39+0800__CAM_FRONT_LEFT__1534736719004825.jpg"
+  },
+  "question": "What color is the traffic signal above the bus?",
+  "answer": "There is no visible traffic signal above the bus in this image.",
+  "task_type": "Identification",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 54,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_LEFT__n013-2018-08-20-11-35-39+0800__CAM_FRONT_LEFT__1534736719004825.jpg_Identification_54_1.json"
+}

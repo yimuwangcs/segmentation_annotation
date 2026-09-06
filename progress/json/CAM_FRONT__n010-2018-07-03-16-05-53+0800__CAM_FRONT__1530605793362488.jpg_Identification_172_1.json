@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605793362488.jpg"
+  },
+  "question": "What vehicle is parking in front of the blue-and-white building?",
+  "answer": "Nothing.",
+  "task_type": "Identification",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 172,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-03-16-05-53+0800__CAM_FRONT__1530605793362488.jpg_Identification_172_1.json"
+}

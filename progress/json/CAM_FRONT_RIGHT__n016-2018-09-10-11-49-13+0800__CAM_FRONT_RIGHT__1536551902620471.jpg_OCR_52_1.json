@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 16,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n016-2018-09-10-11-49-13+0800__CAM_FRONT_RIGHT__1536551902620471.jpg"
+  },
+  "question": "What company name is printed on the construction fencing behind the cones?",
+  "answer": "No clearly readable company name is visible on the construction fencing.",
+  "task_type": "OCR",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 52,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n016-2018-09-10-11-49-13+0800__CAM_FRONT_RIGHT__1536551902620471.jpg_OCR_52_1.json"
+}

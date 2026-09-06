@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 6,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n006-2018-09-17-14-44-43-0400__CAM_FRONT_LEFT__1537210826504671.jpg"
+  },
+  "question": "How many construction workers wearing helmets are visible on the site?",
+  "answer": "None can be clearly confirmed from the image.",
+  "task_type": "Countering/Ordering",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 125,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_LEFT__n006-2018-09-17-14-44-43-0400__CAM_FRONT_LEFT__1537210826504671.jpg_Countering_Ordering_125_1.json"
+}

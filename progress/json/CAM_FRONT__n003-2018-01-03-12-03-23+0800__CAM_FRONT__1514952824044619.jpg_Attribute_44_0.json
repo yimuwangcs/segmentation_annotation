@@ -1,0 +1,202 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619.jpg"
+  },
+  "question": "What is the visible state of the traffic lights ahead, and what does that suggest about movement toward the intersection?",
+  "answer": "The visible traffic lights ahead appear red, suggesting that traffic moving toward that intersection is currently expected to stop.",
+  "task_type": "Attribute",
+  "task_domain": "nuscenes",
+  "num_instances": 4,
+  "hallucination": 0,
+  "annotations": [
+    {
+      "id": 3001,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          495408,
+          1,
+          896,
+          7,
+          892,
+          10,
+          889,
+          11,
+          889,
+          11,
+          889,
+          11,
+          889,
+          11,
+          889,
+          11,
+          889,
+          11,
+          890,
+          9,
+          893,
+          6,
+          935588
+        ]
+      },
+      "bbox": [
+        550,
+        403,
+        11,
+        11
+      ],
+      "area": 99,
+      "label": "signal sign"
+    },
+    {
+      "id": 3002,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          622271,
+          4,
+          896,
+          5,
+          894,
+          6,
+          894,
+          7,
+          893,
+          7,
+          893,
+          7,
+          893,
+          7,
+          894,
+          5,
+          895,
+          4,
+          810525
+        ]
+      },
+      "bbox": [
+        691,
+        370,
+        9,
+        7
+      ],
+      "area": 52,
+      "label": "signal sign"
+    },
+    {
+      "id": 3003,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          462139,
+          6,
+          893,
+          8,
+          891,
+          9,
+          891,
+          9,
+          891,
+          9,
+          891,
+          9,
+          891,
+          9,
+          893,
+          5,
+          971556
+        ]
+      },
+      "bbox": [
+        513,
+        437,
+        8,
+        9
+      ],
+      "area": 64,
+      "label": "signal sign"
+    },
+    {
+      "id": 3004,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          1004820,
+          2,
+          896,
+          5,
+          894,
+          8,
+          871,
+          2,
+          18,
+          10,
+          868,
+          5,
+          10,
+          20,
+          864,
+          7,
+          7,
+          55,
+          9,
+          2,
+          821,
+          7,
+          5,
+          68,
+          822,
+          3,
+          9,
+          3,
+          7,
+          56,
+          847,
+          4,
+          5,
+          43,
+          872,
+          27,
+          427028
+        ]
+      },
+      "bbox": [
+        1116,
+        393,
+        10,
+        81
+      ],
+      "area": 327,
+      "label": "signal sign"
+    }
+  ],
+  "qa_index": 44,
+  "mask_paths": [
+    "masks/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619_44_mask_signal_sign_1.png",
+    "masks/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619_44_mask_signal_sign_2.png",
+    "masks/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619_44_mask_signal_sign_3.png",
+    "masks/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619_44_mask_signal_sign_4.png"
+  ],
+  "rle_paths": [
+    "rle/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619_44_mask_signal_sign_1.json",
+    "rle/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619_44_mask_signal_sign_2.json",
+    "rle/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619_44_mask_signal_sign_3.json",
+    "rle/n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619_44_mask_signal_sign_4.json"
+  ],
+  "json_path": "json/CAM_FRONT__n003-2018-01-03-12-03-23+0800__CAM_FRONT__1514952824044619.jpg_Attribute_44_0.json"
+}

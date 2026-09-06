@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-08-03-16-43-05+0800__CAM_FRONT_RIGHT__1533286096870905.jpg"
+  },
+  "question": "What is the plate number of the sliver car?",
+  "answer": "It is not visible.",
+  "task_type": "OCR",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 122,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n010-2018-08-03-16-43-05+0800__CAM_FRONT_RIGHT__1533286096870905.jpg_OCR_122_1.json"
+}

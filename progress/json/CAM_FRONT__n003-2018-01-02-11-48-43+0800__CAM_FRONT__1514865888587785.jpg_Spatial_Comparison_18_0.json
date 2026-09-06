@@ -1,0 +1,78 @@
+{
+  "image": {
+    "image_id": 3,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865888587785.jpg"
+  },
+  "question": "If the camera vehicle continues following the most central visible lane marking, which general direction is it expected to go first?",
+  "answer": "It is expected to go straight ahead first, following the forward-pointing arrow in the lane.",
+  "task_type": "Spatial Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 1,
+  "hallucination": 0,
+  "annotations": [
+    {
+      "id": 3001,
+      "segmentation": {
+        "size": [
+          900,
+          1600
+        ],
+        "counts": [
+          634120,
+          11,
+          888,
+          13,
+          886,
+          14,
+          886,
+          15,
+          884,
+          16,
+          884,
+          16,
+          884,
+          16,
+          884,
+          16,
+          884,
+          16,
+          884,
+          16,
+          884,
+          16,
+          884,
+          15,
+          886,
+          14,
+          887,
+          13,
+          887,
+          13,
+          888,
+          11,
+          891,
+          3,
+          791475
+        ]
+      },
+      "bbox": [
+        704,
+        517,
+        17,
+        16
+      ],
+      "area": 234,
+      "label": ""
+    }
+  ],
+  "qa_index": 18,
+  "mask_paths": [
+    "masks/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865888587785_18_mask_unlabeled_1.png"
+  ],
+  "rle_paths": [
+    "rle/n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865888587785_18_mask_unlabeled_1.json"
+  ],
+  "json_path": "json/CAM_FRONT__n003-2018-01-02-11-48-43+0800__CAM_FRONT__1514865888587785.jpg_Spatial_Comparison_18_0.json"
+}

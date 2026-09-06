@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-09-15-52-17+0800__CAM_FRONT_RIGHT__1531122783770905.jpg"
+  },
+  "question": "Identify the person riding the orange bicycle.",
+  "answer": "There is no one riding the bicycle.",
+  "task_type": "Identification",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 70,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n010-2018-07-09-15-52-17+0800__CAM_FRONT_RIGHT__1531122783770905.jpg_Identification_70_1.json"
+}

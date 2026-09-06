@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 10,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n010-2018-07-03-14-40-41+0800__CAM_FRONT__1530600126612488.jpg"
+  },
+  "question": "Is the red bus turning into the left carriageway from the background street?",
+  "answer": "There is no clearly visible red bus turning into the left carriageway in the image.",
+  "task_type": "Spatial Comparison",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 157,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT__n010-2018-07-03-14-40-41+0800__CAM_FRONT__1530600126612488.jpg_Spatial_Comparison_157_1.json"
+}

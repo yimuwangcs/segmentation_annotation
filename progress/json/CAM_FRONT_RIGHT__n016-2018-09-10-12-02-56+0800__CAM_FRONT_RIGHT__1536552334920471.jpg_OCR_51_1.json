@@ -1,0 +1,19 @@
+{
+  "image": {
+    "image_id": 16,
+    "width": 1600,
+    "height": 900,
+    "file_name": "n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552334920471.jpg"
+  },
+  "question": "What company name is displayed on the entrance of the curved building?",
+  "answer": "No clearly readable company name is visible on the building entrance in this image.",
+  "task_type": "OCR",
+  "task_domain": "nuscenes",
+  "num_instances": 0,
+  "hallucination": 1,
+  "annotations": [],
+  "qa_index": 51,
+  "mask_paths": [],
+  "rle_paths": [],
+  "json_path": "json/CAM_FRONT_RIGHT__n016-2018-09-10-12-02-56+0800__CAM_FRONT_RIGHT__1536552334920471.jpg_OCR_51_1.json"
+}
