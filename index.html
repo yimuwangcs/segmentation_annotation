@@ -163,8 +163,8 @@
     }
 
     .progress-list {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 8px;
     }
 
@@ -374,15 +374,15 @@
       justify-content: center;
     }
 
-    #viewCanvas {
-      max-width: 100%;
-      max-height: calc(100vh - 240px);
-      width: auto;
-      height: auto;
-      display: block;
-      cursor: crosshair;
-      touch-action: none;
-    }
+      #viewCanvas {
+        max-width: 100%;
+        max-height: calc(100vh - 340px);
+        width: auto;
+        height: auto;
+        display: block;
+        cursor: crosshair;
+        touch-action: none;
+      }
 
     .hintbar {
       display: flex;
@@ -421,15 +421,6 @@
       <div>
         <h1 class="title">Mask Annotator</h1>
         <p class="subtitle">Interactive image segmentation mask annotation with brush, eraser, undo/redo, existing mask loading, and PNG export.</p>
-      </div>
-
-      <div class="section">
-        <span class="section-label">Progress</span>
-        <div class="stat-grid">
-          <div class="stat">QA Num<b id="qaCount">0</b></div>
-          <div class="stat">Types<b id="typeCount">0</b></div>
-        </div>
-        <div id="typeBreakdown" class="progress-list"></div>
       </div>
 
       <div class="section">
@@ -512,6 +503,14 @@
       <div class="main-top">
         <div class="meta"></div>
         <div class="top-right">
+          <div class="grid-item">
+            <label>Progress</label>
+            <div class="stat-grid">
+              <div class="stat">QA Num<b id="qaCount">0</b></div>
+              <div class="stat">Labeled Images<b id="labeledCount">0</b></div>
+            </div>
+            <div id="typeBreakdown" class="progress-list"></div>
+          </div>
           <div class="qa-pair">
             <div class="grid-item">
               <label for="questionInput">Question</label>
@@ -531,6 +530,7 @@
                 <option value="Attribute">Attribute</option>
                 <option value="OCR">OCR</option>
                 <option value="Spatial Comparison">Spatial Comparison</option>
+                <option value="Comparison">Comparison</option>
                 <option value="Countering/Ordering">Countering/Ordering</option>
               </select>
             </div>
@@ -663,7 +663,7 @@
     const samPositiveCount = document.getElementById("samPositiveCount");
     const samNegativeCount = document.getElementById("samNegativeCount");
     const qaCount = document.getElementById("qaCount");
-    const typeCount = document.getElementById("typeCount");
+    const labeledCount = document.getElementById("labeledCount");
     const typeBreakdown = document.getElementById("typeBreakdown");
     const addMaskBtn = document.getElementById("addMaskBtn");
     const removeMaskBtn = document.getElementById("removeMaskBtn");
@@ -805,12 +805,16 @@
         const payload = await response.json();
         qaCount.textContent = String(payload.qa_total ?? 0);
         const entries = payload.type_counts || {};
-        typeCount.textContent = String(Object.keys(entries).length);
+        labeledCount.textContent = String(payload.labeled_images ?? 0);
         typeBreakdown.innerHTML = "";
         Object.entries(entries).forEach(([key, value]) => {
           const row = document.createElement("div");
           row.className = "stat";
-          row.textContent = `${key}: ${value}`;
+          if (value && typeof value === "object") {
+            row.textContent = `${key}: ${value.total ?? 0} (${value.hallucination ?? 0})`;
+          } else {
+            row.textContent = `${key}: ${value}`;
+          }
           typeBreakdown.appendChild(row);
         });
       } catch (error) {
@@ -1574,6 +1578,10 @@
       const entry = state.entries[state.currentIndex];
       if (!entry?.abs_path) {
         setMetaStatus("No nuImages item selected.", true);
+        return;
+      }
+      if (!taskTypeInput.value) {
+        setMetaStatus("Select a task type before saving.", true);
         return;
       }
       saveMetadata();

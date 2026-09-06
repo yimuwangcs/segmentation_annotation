@@ -37,6 +37,7 @@ PROGRESS_IMAGES_DIR = os.path.join(PROGRESS_DIR, "images")
 PROGRESS_MASKS_DIR = os.path.join(PROGRESS_DIR, "masks")
 PROGRESS_SUMMARY_FILE = os.path.join(PROGRESS_DIR, "summary.json")
 PROGRESS_RLE_DIR = os.path.join(PROGRESS_DIR, "rle")
+PROGRESS_JSON_DIR = os.path.join(PROGRESS_DIR, "json")
 
 
 class PredictRequest(BaseModel):
@@ -134,6 +135,7 @@ def ensure_progress_store() -> None:
     os.makedirs(PROGRESS_IMAGES_DIR, exist_ok=True)
     os.makedirs(PROGRESS_MASKS_DIR, exist_ok=True)
     os.makedirs(PROGRESS_RLE_DIR, exist_ok=True)
+    os.makedirs(PROGRESS_JSON_DIR, exist_ok=True)
     if not os.path.exists(PROGRESS_FILE):
         with open(PROGRESS_FILE, "w") as f:
             json.dump({"entries": {}}, f)
@@ -280,13 +282,19 @@ def progress_summary() -> dict:
     summary = load_summary()
     entries = summary.get("entries", {})
     total = 0
-    type_counts: dict[str, int] = {}
+    type_counts: dict[str, dict[str, int]] = {}
     for items in entries.values():
+        if not isinstance(items, list):
+            continue
         for item in items:
             total += 1
             task_type = item.get("task_type") or "Unknown"
-            type_counts[task_type] = type_counts.get(task_type, 0) + 1
-    return {"qa_total": total, "type_counts": type_counts}
+            counts = type_counts.setdefault(task_type, {"total": 0, "hallucination": 0})
+            counts["total"] += 1
+            if int(item.get("hallucination", 0)) == 1:
+                counts["hallucination"] += 1
+    labeled_images = len([v for v in load_progress().get("entries", {}).values() if v.get("status") == "labeled"])
+    return {"qa_total": total, "type_counts": type_counts, "labeled_images": labeled_images}
 
 
 @app.post("/progress/update")
@@ -311,8 +319,21 @@ def progress_commit(payload: ProgressCommitRequest) -> dict:
 
     ensure_progress_store()
     summary = load_summary()
-    summary_entries = summary.setdefault("entries", {}).setdefault(payload.file_name, [])
-    qa_index = len(summary_entries) + 1
+    rel_key = os.path.basename(payload.file_name)
+    if os.path.sep in payload.file_name:
+        parts = payload.file_name.split(os.path.sep)
+        if len(parts) >= 2:
+            rel_key = os.path.join(parts[-2], parts[-1])
+    summary_entries = summary.setdefault("entries", {}).setdefault(rel_key, [])
+    qa_index = (
+        sum(len(items) for items in summary.get("entries", {}).values() if isinstance(items, list)) + 1
+    )
+    is_hallucination = False
+    if payload.summary_entry is not None:
+        try:
+            is_hallucination = int(payload.summary_entry.get("hallucination", 0)) == 1
+        except Exception:
+            is_hallucination = False
 
     image_basename = os.path.basename(payload.file_name)
     image_stem = os.path.splitext(image_basename)[0]
@@ -328,7 +349,7 @@ def progress_commit(payload: ProgressCommitRequest) -> dict:
     mask_paths = []
     rle_paths = []
     masks = payload.masks or []
-    if masks:
+    if masks and not is_hallucination:
         for idx, item in enumerate(masks, start=1):
             data_url = item.get("data")
             label = item.get("label") or f"{idx}"
@@ -346,7 +367,7 @@ def progress_commit(payload: ProgressCommitRequest) -> dict:
                 with open(rle_out, "w") as f:
                     json.dump(item["rle"], f)
                 rle_paths.append(rle_out)
-    else:
+    elif not is_hallucination:
         if payload.width is None or payload.height is None:
             raise HTTPException(status_code=400, detail="width/height required for empty mask")
         mask_out = os.path.join(PROGRESS_MASKS_DIR, f"{image_stem}_{qa_index}_mask.png")
@@ -368,8 +389,19 @@ def progress_commit(payload: ProgressCommitRequest) -> dict:
         summary_entry["qa_index"] = qa_index
         summary_entry["mask_paths"] = rel_mask_paths
         summary_entry["rle_paths"] = rel_rle_paths
+
+        image_path_slug = rel_key.replace(os.sep, "__")
+        question_type = (summary_entry.get("task_type") or "Unknown").replace(" ", "_").replace("/", "_")
+        hallucination_flag = summary_entry.get("hallucination", 0)
+        json_name = f"{image_path_slug}_{question_type}_{qa_index}_{hallucination_flag}.json"
+        json_path = os.path.join(PROGRESS_JSON_DIR, json_name)
+        rel_json_path = os.path.relpath(json_path, PROGRESS_DIR)
+        summary_entry["json_path"] = rel_json_path
         summary_entries.append(summary_entry)
         save_summary(summary)
+
+        with open(json_path, "w") as f:
+            json.dump(summary_entry, f, indent=2)
 
     return {"ok": True, "image_path": image_out}
 
